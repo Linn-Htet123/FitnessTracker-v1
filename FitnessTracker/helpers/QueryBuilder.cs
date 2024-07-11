@@ -34,16 +34,17 @@ namespace FitnessTracker.helpers
             }
         }
 
-        // Build SELECT command
+        // Build SELECT command with JOIN support
         public static MySqlCommand BuildSelectCommand(string table, string selectedColumns = "*", (string columnName, object columnValue)[] conditions = null, string logicalOperator = "AND", int? limit = null, string orderByColumn = null, bool ascending = true, params string[] joinClauses)
         {
             MySqlCommand command = db.CONN.CreateCommand();
             StringBuilder queryBuilder = new StringBuilder($"SELECT {selectedColumns} FROM {env.DatabaseName}.{table}");
 
-            AppendJoinClauses(queryBuilder, joinClauses);
+            Join(queryBuilder, joinClauses);
             Where(command, queryBuilder, conditions, logicalOperator);
             OrderBy(queryBuilder, orderByColumn, ascending);
             Limit(queryBuilder, limit);
+
             command.CommandText = queryBuilder.ToString();
             return command;
         }
@@ -74,13 +75,13 @@ namespace FitnessTracker.helpers
         }
 
         // Update command with JOIN support
-        public static int Update(string table, (string columnName, object columnValue)[] updateParameters, (string columnName, object columnValue)[] conditions = null, string logicalOperator = "AND")
+        public static int Update(string table, (string columnName, object columnValue)[] updateParameters, (string columnName, object columnValue)[] conditions = null, string logicalOperator = "AND", params string[] joinClauses)
         {
-
             StringBuilder queryBuilder = new StringBuilder();
-            queryBuilder.Append($"UPDATE {env.DatabaseName}.{table} SET ");
+            queryBuilder.Append($"UPDATE {env.DatabaseName}.{table}");
 
-
+            Join(queryBuilder, joinClauses);
+            queryBuilder.Append(" SET ");
             List<string> updateStrings = new List<string>();
             for (int i = 0; i < updateParameters.Length; i++)
             {
@@ -91,12 +92,9 @@ namespace FitnessTracker.helpers
 
             using (MySqlCommand command = new MySqlCommand())
             {
-
                 Where(command, queryBuilder, conditions, logicalOperator);
-
                 command.CommandText = queryBuilder.ToString();
                 command.Connection = db.CONN;
-
 
                 for (int i = 0; i < updateParameters.Length; i++)
                 {
@@ -115,9 +113,9 @@ namespace FitnessTracker.helpers
         // Delete command with JOIN support
         public static void Delete(string table, (string columnName, object columnValue)[] conditions, params string[] joinClauses)
         {
-            StringBuilder queryBuilder = new StringBuilder($"DELETE FROM {env.DatabaseName}.{table} ");
+            StringBuilder queryBuilder = new StringBuilder($"DELETE FROM {env.DatabaseName}.{table}");
 
-            AppendJoinClauses(queryBuilder, joinClauses);
+            Join(queryBuilder, joinClauses);
             Where(null, queryBuilder, conditions);
 
             using (MySqlCommand command = new MySqlCommand(queryBuilder.ToString(), db.CONN))
@@ -127,8 +125,6 @@ namespace FitnessTracker.helpers
                     command.Parameters.AddWithValue($"@{condition.columnName}", condition.columnValue);
                 }
 
-
-
                 db.OpenConnection();
                 command.ExecuteNonQuery();
                 db.CloseConnection();
@@ -136,6 +132,17 @@ namespace FitnessTracker.helpers
         }
 
         // Private methods
+        private static void Join(StringBuilder queryBuilder, params string[] joinClauses)
+        {
+            if (joinClauses != null && joinClauses.Length > 0)
+            {
+                foreach (var joinClause in joinClauses)
+                {
+                    queryBuilder.Append(" ").Append(joinClause);
+                }
+            }
+        }
+
         private static void Where(MySqlCommand command, StringBuilder queryBuilder, (string columnName, object columnValue)[] conditions, string logicalOperator = "AND")
         {
             if (conditions != null && conditions.Length > 0)
@@ -147,13 +154,8 @@ namespace FitnessTracker.helpers
                 {
                     string paramName = $"@value{i}";
                     conditionStrings.Add($"{conditions[i].columnName} = {paramName}");
-
-
                     command.Parameters.AddWithValue(paramName, conditions[i].columnValue);
-                    Console.WriteLine($"where {paramName}, {conditions[i].columnValue}");
-
                 }
-                Console.WriteLine(conditionStrings.ToArray());
                 queryBuilder.Append(string.Join($" {logicalOperator} ", conditionStrings));
             }
         }
@@ -178,14 +180,5 @@ namespace FitnessTracker.helpers
                 queryBuilder.Append($" LIMIT {limit}");
             }
         }
-
-        private static void AppendJoinClauses(StringBuilder queryBuilder, string[] joinClauses)
-        {
-            foreach (var joinClause in joinClauses)
-            {
-                queryBuilder.Append($" {joinClause}");
-            }
-        }
-
     }
 }

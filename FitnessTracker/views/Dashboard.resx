@@ -121,7 +121,7 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAnFJREFUSEutlr1rVEEUxReREIIECSIiYpHCQsRCRCws3opYWKQQsUhhIUHeAwsJ
+        vgAADr4B6kKxwAAAAnFJREFUSEutlr1rVEEUxReREIIECSIiYpHCQsRCRCws3opYWKQQsUhhIUHeAwsJ
         KUUQCwsLSwuR1BaSP0AktViJWIiFM4jFFiHFFhIkxN+9c95ndhdW98Bh7tyvuXNn5u32JqFfhIv9Iq71
         83BEqtkiy8MSC0TGN4yLUs8OJF3o5/ELOzlA3rK5TLMBCU+QfECLDoxZHl+jk3UGIPltdmDVs4CP++hu
         yvx/oGLaEz558gazIm4zzsnt30GSF7TEW+Pt8V1Ym8IfbBfkNj1IZLfnLkksUVl1axfwvtynB8FX6feO
@@ -137,7 +137,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAp5JREFUSEutlLFrFFEQxo9DROQIIaRIKSFcEVKIWFiI7IUjhOMQCUFEwmGRYhcs
+        vgAADr4B6kKxwAAAAp5JREFUSEutlLFrFFEQxo9DROQIIaRIKSFcEVKIWFiI7IUjhOMQCUFEwmGRYhcs
         LO39C/wrLEUkSBALSXGIlYWFhHD7imARjiMcQUIQ/X2zc0sU92695INh3pud+ea9ebNTuSiiOF1txOl+
         IwmPkKqbLwcQriNHJDlGnzSS9AlyOUkacViFVMSfSbCM/pAlCR13mR6QtOzUcdpnvei2GWQH+xl6C5nu
         JlGStgnuR0k4QJ8ir5Dr+oaeI8EOWjfZ4pYWUxoENSE+JsmA4Dr7Z8gptk13yW4SW7mGSG6fCB6vHcVh
@@ -154,7 +154,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAihJREFUSEu9lL9KI1EUxgeRIBIsLKysLH0Eq4mVhYX4CGIx2Vq22EKwWKx9CPEB
+        vgAADr4B6kKxwAAAAihJREFUSEu9lL9KI1EUxgeRIBIsLKysLH0Eq4mVhYX4CGIx2Vq22EKwWKx9CPEB
         LKxFLCyCiIXFsmQGWSTIMoQgFhLW33fnzMx1JokpNl74cr57z/9zJzfQakXxQqud7IEr8DtsJwl4BH/Y
         +3gaBbN7BF34NXIfLGTBIRyeIofg33/CMIySMwpfVIJIB04RxZ5RjQ/CKO4iVelLqRuLYStKvgVU34Fk
         wQFBcvmG0SWcAuI1+JxrmSUO1vBVcZeylV8V6DoBrfQgZWYlaycPBN1C17CYIxfJ57FtmO2D+froqYO/
@@ -171,5 +171,8 @@
   </metadata>
   <metadata name="mySqlCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

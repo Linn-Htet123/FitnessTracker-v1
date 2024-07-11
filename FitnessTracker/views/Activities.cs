@@ -24,7 +24,7 @@ namespace FitnessTracker.views
 
         private void Btn_yoga_Click(object sender, System.EventArgs e)
         {
-            LinkForm.Replace(new YogaActivity(), panel_activities);
+            LinkForm.Replace(new YogaActivity(this), panel_activities);
         }
 
         private void Activities_Load(object sender, System.EventArgs e)

@@ -7,7 +7,7 @@ namespace FitnessTracker.enums
         Users,
         Goals,
         ActivityTypes,
-        Activityistories
+        ActivityHistories
     }
 
     public static class DatabaseTables
@@ -18,7 +18,7 @@ namespace FitnessTracker.enums
             {
                 case Tables.Users:
                     return "users";
-                case Tables.Activityistories:
+                case Tables.ActivityHistories:
                     return "activity_histories";
                 case Tables.Goals:
                     return "goals";

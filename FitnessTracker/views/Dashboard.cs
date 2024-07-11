@@ -4,6 +4,8 @@ using FitnessTracker.models;
 using FitnessTracker.services;
 using FitnessTracker.utils;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using static FitnessTracker.utils.ModalPopup;
 
@@ -11,8 +13,9 @@ namespace FitnessTracker.views
 {
     public partial class Dashboard : Form
     {
-        readonly UserController userController = new UserController();
-        readonly GoalController goalController = new GoalController();
+        readonly private UserController userController = new UserController();
+        readonly private GoalController goalController = new GoalController();
+        readonly private ActivityHistoriesController activityHistoriesController = new ActivityHistoriesController();
         readonly private User user = StoreServices.GetState<User>("CurrentUser");
 
         public Dashboard()
@@ -21,12 +24,11 @@ namespace FitnessTracker.views
             LoadGreeting();
             LoadUserData();
             LoadCaloriesRate();
+            LoadActivityLabels();
         }
 
         private void LoadUserData()
         {
-
-
             if (user != null && user.IsAuthenticated)
             {
                 Lbl_username.Text = user.Username;
@@ -81,7 +83,6 @@ namespace FitnessTracker.views
             Lbl_message.Text = string.Empty;
         }
 
-
         private void LoadCaloriesRate()
         {
             var currentGoal = goalController.GetCurrentGoal();
@@ -109,7 +110,6 @@ namespace FitnessTracker.views
                 Lbl_set_calories.Text = "Goal in progress, keep doing!";
             }
 
-
             try
             {
                 double percentage = CalculatePercentage.GetPercentage(currentCalories, goalCalories);
@@ -121,7 +121,6 @@ namespace FitnessTracker.views
                 HandlePercentageCalculationError(ex);
             }
         }
-
 
         private void LoadGreeting()
         {
@@ -154,6 +153,71 @@ namespace FitnessTracker.views
             LinkForm.Link(this, new Activities());
         }
 
+        private void LoadActivityLabels()
+        {
+            List<Dictionary<string, object>> activities = activityHistoriesController.GetActivityHistoriesByUser().Take(3).ToList();
+
+
+            Lbl_no_recent.Visible = activities.Count == 0;
+
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (i < activities.Count)
+                {
+                    string activityName = activities[i].ContainsKey("activity_name") ? activities[i]["activity_name"].ToString() : "";
+                    string caloriesBurned = activities[i].ContainsKey("burned_calories") ? activities[i]["burned_calories"].ToString() : "";
+
+                    switch (i)
+                    {
+                        case 0:
+                            UpdateLabel(Lbl_activity_name_1, activityName);
+                            UpdateLabel(Lbl_calories_burned_1, $"- {caloriesBurned} kcal");
+                            break;
+                        case 1:
+                            UpdateLabel(Lbl_activity_name_2, activityName);
+                            UpdateLabel(Lbl_calories_burned_2, $"- {caloriesBurned} kcal");
+                            break;
+                        case 2:
+                            UpdateLabel(Lbl_activity_name_3, activityName);
+                            UpdateLabel(Lbl_calories_burned_3, $"- {caloriesBurned} kcal");
+                            break;
+                    }
+                }
+                else
+                {
+                    // Clear labels if fewer than 3 activities
+                    switch (i)
+                    {
+                        case 0:
+                            ClearLabels(Lbl_activity_name_1, Lbl_calories_burned_1);
+                            break;
+                        case 1:
+                            ClearLabels(Lbl_activity_name_2, Lbl_calories_burned_2);
+                            break;
+                        case 2:
+                            ClearLabels(Lbl_activity_name_3, Lbl_calories_burned_3);
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void UpdateLabel(Label label, string text)
+        {
+            label.Text = text;
+        }
+
+        private void ClearLabels(Label nameLabel, Label caloriesLabel)
+        {
+            nameLabel.Text = "";
+            caloriesLabel.Text = "";
+        }
+
+        private string FormatActivityLabel(Dictionary<string, object> activity)
+        {
+            return $"{activity["activity_name"]}\t {activity["burned_calories"]} kcal";
+        }
 
     }
 }

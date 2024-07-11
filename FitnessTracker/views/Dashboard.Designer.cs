@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.LegendItem legendItem2 = new System.Windows.Forms.DataVisualization.Charting.LegendItem();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.LegendItem legendItem4 = new System.Windows.Forms.DataVisualization.Charting.LegendItem();
+            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Lbl_burn = new System.Windows.Forms.Label();
@@ -70,17 +70,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.panel_recent = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.Lbl_activity_name_1 = new System.Windows.Forms.Label();
+            this.Lbl_calories_burned_1 = new System.Windows.Forms.Label();
+            this.Lbl_calories_burned_2 = new System.Windows.Forms.Label();
+            this.Lbl_activity_name_2 = new System.Windows.Forms.Label();
+            this.Lbl_calories_burned_3 = new System.Windows.Forms.Label();
+            this.Lbl_activity_name_3 = new System.Windows.Forms.Label();
+            this.Lbl_no_recent = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -90,7 +89,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panel_recent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -422,45 +421,45 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.CustomItems.Add(legendItem2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.CustomItems.Add(legendItem4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(25, 179);
             this.chart1.Name = "chart1";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Bycycling";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Walking";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series3";
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series4";
-            series13.ChartArea = "ChartArea1";
-            series13.Legend = "Legend1";
-            series13.Name = "Series5";
-            series14.ChartArea = "ChartArea1";
-            series14.Legend = "Legend1";
-            series14.Name = "Series6";
-            series15.ChartArea = "ChartArea1";
-            series15.Legend = "Legend1";
-            series15.Name = "Series7";
-            series16.ChartArea = "ChartArea1";
-            series16.Legend = "Legend1";
-            series16.Name = "Series8";
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
-            this.chart1.Series.Add(series13);
-            this.chart1.Series.Add(series14);
-            this.chart1.Series.Add(series15);
-            this.chart1.Series.Add(series16);
+            series25.ChartArea = "ChartArea1";
+            series25.Legend = "Legend1";
+            series25.Name = "Bycycling";
+            series26.ChartArea = "ChartArea1";
+            series26.Legend = "Legend1";
+            series26.Name = "Walking";
+            series27.ChartArea = "ChartArea1";
+            series27.Legend = "Legend1";
+            series27.Name = "Series3";
+            series28.ChartArea = "ChartArea1";
+            series28.Legend = "Legend1";
+            series28.Name = "Series4";
+            series29.ChartArea = "ChartArea1";
+            series29.Legend = "Legend1";
+            series29.Name = "Series5";
+            series30.ChartArea = "ChartArea1";
+            series30.Legend = "Legend1";
+            series30.Name = "Series6";
+            series31.ChartArea = "ChartArea1";
+            series31.Legend = "Legend1";
+            series31.Name = "Series7";
+            series32.ChartArea = "ChartArea1";
+            series32.Legend = "Legend1";
+            series32.Name = "Series8";
+            this.chart1.Series.Add(series25);
+            this.chart1.Series.Add(series26);
+            this.chart1.Series.Add(series27);
+            this.chart1.Series.Add(series28);
+            this.chart1.Series.Add(series29);
+            this.chart1.Series.Add(series30);
+            this.chart1.Series.Add(series31);
+            this.chart1.Series.Add(series32);
             this.chart1.Size = new System.Drawing.Size(840, 194);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
@@ -472,115 +471,22 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // panel3
+            // panel_recent
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(25, 391);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(554, 246);
-            this.panel3.TabIndex = 11;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(467, 187);
-            this.label13.Name = "label13";
-            this.label13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label13.Size = new System.Drawing.Size(65, 19);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "100kcal";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(21, 187);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 24);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "Yoga";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(467, 139);
-            this.label11.Name = "label11";
-            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label11.Size = new System.Drawing.Size(65, 19);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "230kcal";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(21, 139);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 24);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Jump rope";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(467, 92);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(65, 19);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "400kcal";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(21, 92);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 24);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Running";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(401, 17);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(0, 19);
-            this.label6.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(750, 92);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(42, 19);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "70%";
+            this.panel_recent.BackColor = System.Drawing.Color.White;
+            this.panel_recent.Controls.Add(this.Lbl_no_recent);
+            this.panel_recent.Controls.Add(this.Lbl_calories_burned_3);
+            this.panel_recent.Controls.Add(this.Lbl_activity_name_3);
+            this.panel_recent.Controls.Add(this.Lbl_calories_burned_2);
+            this.panel_recent.Controls.Add(this.Lbl_activity_name_2);
+            this.panel_recent.Controls.Add(this.Lbl_calories_burned_1);
+            this.panel_recent.Controls.Add(this.Lbl_activity_name_1);
+            this.panel_recent.Controls.Add(this.label9);
+            this.panel_recent.Controls.Add(this.label10);
+            this.panel_recent.Location = new System.Drawing.Point(25, 391);
+            this.panel_recent.Name = "panel_recent";
+            this.panel_recent.Size = new System.Drawing.Size(554, 246);
+            this.panel_recent.TabIndex = 11;
             // 
             // label9
             // 
@@ -605,14 +511,91 @@
             this.label10.TabIndex = 5;
             this.label10.Text = "Recent Activities";
             // 
+            // Lbl_activity_name_1
+            // 
+            this.Lbl_activity_name_1.AutoSize = true;
+            this.Lbl_activity_name_1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_activity_name_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Lbl_activity_name_1.Location = new System.Drawing.Point(20, 101);
+            this.Lbl_activity_name_1.Name = "Lbl_activity_name_1";
+            this.Lbl_activity_name_1.Size = new System.Drawing.Size(167, 24);
+            this.Lbl_activity_name_1.TabIndex = 6;
+            this.Lbl_activity_name_1.Text = "Recent Activities";
+            // 
+            // Lbl_calories_burned_1
+            // 
+            this.Lbl_calories_burned_1.AutoSize = true;
+            this.Lbl_calories_burned_1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_calories_burned_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_calories_burned_1.Location = new System.Drawing.Point(467, 106);
+            this.Lbl_calories_burned_1.Name = "Lbl_calories_burned_1";
+            this.Lbl_calories_burned_1.Size = new System.Drawing.Size(70, 19);
+            this.Lbl_calories_burned_1.TabIndex = 7;
+            this.Lbl_calories_burned_1.Text = "200 kcal";
+            // 
+            // Lbl_calories_burned_2
+            // 
+            this.Lbl_calories_burned_2.AutoSize = true;
+            this.Lbl_calories_burned_2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_calories_burned_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_calories_burned_2.Location = new System.Drawing.Point(467, 152);
+            this.Lbl_calories_burned_2.Name = "Lbl_calories_burned_2";
+            this.Lbl_calories_burned_2.Size = new System.Drawing.Size(45, 19);
+            this.Lbl_calories_burned_2.TabIndex = 9;
+            this.Lbl_calories_burned_2.Text = "3000";
+            // 
+            // Lbl_activity_name_2
+            // 
+            this.Lbl_activity_name_2.AutoSize = true;
+            this.Lbl_activity_name_2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_activity_name_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Lbl_activity_name_2.Location = new System.Drawing.Point(20, 149);
+            this.Lbl_activity_name_2.Name = "Lbl_activity_name_2";
+            this.Lbl_activity_name_2.Size = new System.Drawing.Size(167, 24);
+            this.Lbl_activity_name_2.TabIndex = 8;
+            this.Lbl_activity_name_2.Text = "Recent Activities";
+            // 
+            // Lbl_calories_burned_3
+            // 
+            this.Lbl_calories_burned_3.AutoSize = true;
+            this.Lbl_calories_burned_3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_calories_burned_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_calories_burned_3.Location = new System.Drawing.Point(467, 196);
+            this.Lbl_calories_burned_3.Name = "Lbl_calories_burned_3";
+            this.Lbl_calories_burned_3.Size = new System.Drawing.Size(70, 19);
+            this.Lbl_calories_burned_3.TabIndex = 11;
+            this.Lbl_calories_burned_3.Text = "400 kcal";
+            // 
+            // Lbl_activity_name_3
+            // 
+            this.Lbl_activity_name_3.AutoSize = true;
+            this.Lbl_activity_name_3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_activity_name_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Lbl_activity_name_3.Location = new System.Drawing.Point(20, 197);
+            this.Lbl_activity_name_3.Name = "Lbl_activity_name_3";
+            this.Lbl_activity_name_3.Size = new System.Drawing.Size(167, 24);
+            this.Lbl_activity_name_3.TabIndex = 10;
+            this.Lbl_activity_name_3.Text = "Recent Activities";
+            // 
+            // Lbl_no_recent
+            // 
+            this.Lbl_no_recent.AutoSize = true;
+            this.Lbl_no_recent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_no_recent.ForeColor = System.Drawing.Color.Gray;
+            this.Lbl_no_recent.Location = new System.Drawing.Point(193, 138);
+            this.Lbl_no_recent.Name = "Lbl_no_recent";
+            this.Lbl_no_recent.Size = new System.Drawing.Size(241, 24);
+            this.Lbl_no_recent.TabIndex = 12;
+            this.Lbl_no_recent.Text = "No Recent Activities Yet.";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(894, 752);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(894, 753);
+            this.Controls.Add(this.panel_recent);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Btn_link_activities);
@@ -640,8 +623,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel_recent.ResumeLayout(false);
+            this.panel_recent.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -676,17 +659,16 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel_recent;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label Lbl_activity_name_1;
+        private System.Windows.Forms.Label Lbl_calories_burned_3;
+        private System.Windows.Forms.Label Lbl_activity_name_3;
+        private System.Windows.Forms.Label Lbl_calories_burned_2;
+        private System.Windows.Forms.Label Lbl_activity_name_2;
+        private System.Windows.Forms.Label Lbl_calories_burned_1;
+        private System.Windows.Forms.Label Lbl_no_recent;
     }
 }

@@ -39,6 +39,7 @@ namespace FitnessTracker.utils
             }
             return "Good evening";
         }
+
         public static GoalCompletionStatus GetCompletionStatus(DateTime created_at, DateTime? completed_at)
         {
             if (completed_at == null)

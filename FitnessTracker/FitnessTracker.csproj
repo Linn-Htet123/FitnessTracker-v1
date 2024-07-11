@@ -99,6 +99,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controllers\ActivityHistoriesController.cs" />
     <Compile Include="controllers\ActivityTypeController.cs" />
     <Compile Include="controllers\GoalController.cs" />
     <Compile Include="controllers\UserController.cs" />
@@ -120,8 +121,10 @@
     <Compile Include="helpers\QueryBuilder.cs" />
     <Compile Include="helpers\validations\ValidationResult.cs" />
     <Compile Include="helpers\validations\Validator.cs" />
+    <Compile Include="models\ActivityHistoriesDetails.cs" />
     <Compile Include="models\ActivityType.cs" />
     <Compile Include="models\Goal.cs" />
+    <Compile Include="models\interfaces\IActivityHistories.cs" />
     <Compile Include="models\interfaces\IActivityType.cs" />
     <Compile Include="models\interfaces\IGoal.cs" />
     <Compile Include="models\User.cs" />
@@ -154,6 +157,7 @@
     <Compile Include="views\Activities.Designer.cs">
       <DependentUpon>Activities.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\BaseActivity.cs" />
     <Compile Include="views\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>

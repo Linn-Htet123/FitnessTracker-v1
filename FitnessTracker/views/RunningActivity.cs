@@ -9,13 +9,13 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using static FitnessTracker.utils.CalculateActivity;
 using static FitnessTracker.utils.LabelUtils;
-using static FitnessTracker.utils.ModalPopup;
 namespace FitnessTracker.views
 {
     public partial class RunningActivity : Form
     {
         readonly private GoalController goalController = new GoalController();
         readonly private ActivityTypeController activityTypeController = new ActivityTypeController();
+        readonly private ActivityHistoriesController activityHistoriesController = new ActivityHistoriesController();
 
         private Dictionary<string, Label> errorLabels;
         readonly private User currentUser = StoreServices.GetState<User>("CurrentUser");
@@ -55,15 +55,15 @@ namespace FitnessTracker.views
                 RenderValidationErrors.RenderErrors(errorLabels, validationResult);
                 return;
             }
-
-
             var burnedCalories = CalculateRunningCalories(Convert.ToDouble(distance), Convert.ToDouble(time), Convert.ToDouble(speed), currentUser.Weight);
 
+            bool isUpdated = goalController.UpdateCurrentCalories(burnedCalories);
 
-
-            if (goalController.UpdateCurrentCalories(burnedCalories))
+            if (isUpdated)
             {
-                InfoPopup(activityTypeController.GetActivityType(ActivityTypesEnum.Running).ActivityName);
+                int activityTypeId = activityTypeController.GetActivityType(ActivityTypesEnum.Running).Id;
+                activityHistoriesController.CreateActivityHistories(activityTypeId, burnedCalories);
+
                 LinkForm.Link(parentForm, new Dashboard());
             }
         }

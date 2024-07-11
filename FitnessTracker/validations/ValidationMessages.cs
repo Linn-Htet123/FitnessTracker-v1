@@ -48,5 +48,21 @@
         public const string SpeedMustBeNumber = "Speed must be a number.";
         public const string SpeedMustBeGreaterThanZero = "Speed must be greater than zero.";
         public const string SpeedMaxValue = "Speed must not exceed 50 km/h.";
+
+        // Yoga Activity validation
+        public const string DurationRequired = "Duration is required.";
+        public const string DurationMustBeNumber = "Duration must be a number.";
+        public const string DurationMustBeGreaterThanZero = "Duration must be greater than zero.";
+        public const string DurationMaxValue = "Duration must not exceed 240 minutes.";
+
+        public const string AverageHeartRateRequired = "Average heart rate is required.";
+        public const string AverageHeartRateMustBeNumber = "Average heart rate must be a number.";
+        public const string AverageHeartRateMinValue = "Average heart rate must be at least 50 bpm.";
+        public const string AverageHeartRateMaxValue = "Average heart rate must not exceed 200 bpm.";
+
+        public const string IntensityFactorRequired = "Intensity factor is required.";
+        public const string IntensityFactorMustBeNumber = "Intensity factor must be a number.";
+        public const string IntensityFactorMustBeGreaterThanZero = "Intensity factor must be greater than zero.";
+        public const string IntensityFactorMaxValue = "Intensity factor must not exceed 5.";
     }
 }
