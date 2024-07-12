@@ -18,5 +18,10 @@ namespace FitnessTracker.controllers
         {
             return GetActivityHistoriesByUserId(userId);
         }
+
+        public Dictionary<string, int> GetActivityCount()
+        {
+            return GetActivityCountsByUserId(userId);
+        }
     }
 }

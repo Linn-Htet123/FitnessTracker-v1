@@ -64,5 +64,68 @@
         public const string IntensityFactorMustBeNumber = "Intensity factor must be a number.";
         public const string IntensityFactorMustBeGreaterThanZero = "Intensity factor must be greater than zero.";
         public const string IntensityFactorMaxValue = "Intensity factor must not exceed 5.";
+
+        // Biking Activity validation
+        public const string BikingDistanceRequired = "Biking distance is required.";
+        public const string BikingDistanceMustBeNumber = "Biking distance must be a number.";
+        public const string BikingDistanceMustBeGreaterThanZero = "Biking distance must be greater than zero.";
+        public const string BikingDistanceMaxValue = "Biking distance must not exceed 200 km.";
+
+        public const string BikingTimeTakenRequired = "Biking time taken is required.";
+        public const string BikingTimeTakenMustBeNumber = "Biking time taken must be a number.";
+        public const string BikingTimeTakenMustBeGreaterThanZero = "Biking time taken must be greater than zero.";
+        public const string BikingTimeTakenMaxValue = "Biking time taken must not exceed 1440 minutes.";
+
+        public const string BikingSpeedRequired = "Biking speed is required.";
+        public const string BikingSpeedMustBeNumber = "Biking speed must be a number.";
+        public const string BikingSpeedMustBeGreaterThanZero = "Biking speed must be greater than zero.";
+        public const string BikingSpeedMaxValue = "Biking speed must not exceed 60 km/h.";
+
+        // Swimming Activity validation
+        public const string SwimmingLapsRequired = "Number of laps is required.";
+        public const string SwimmingLapsMustBeNumber = "Number of laps must be a number.";
+        public const string SwimmingLapsMustBeGreaterThanZero = "Number of laps must be greater than zero.";
+        public const string SwimmingLapsMaxValue = "Number of laps must not exceed 1000 laps.";
+
+        public const string SwimmingTimeTakenRequired = "Time taken is required.";
+        public const string SwimmingTimeTakenMustBeNumber = "Time taken must be a number.";
+        public const string SwimmingTimeTakenMustBeGreaterThanZero = "Time taken must be greater than zero.";
+        public const string SwimmingTimeTakenMaxValue = "Time taken must not exceed 1000 minutes.";
+
+        public const string SwimmingAverageHeartRateRequired = "Average heart rate is required.";
+        public const string SwimmingAverageHeartRateMustBeNumber = "Average heart rate must be a number.";
+        public const string SwimmingAverageHeartRateMinValue = "Average heart rate must be at least 50 bpm.";
+        public const string SwimmingAverageHeartRateMaxValue = "Average heart rate must not exceed 200 bpm.";
+
+        // Jumping rope Activity validation
+        public const string JumpingRopeJumpsRequired = "Number of jumps is required.";
+        public const string JumpingRopeJumpsMustBeNumber = "Number of jumps must be a number.";
+        public const string JumpingRopeJumpsMustBeGreaterThanZero = "Number of jumps must be greater than zero.";
+
+        public const string JumpingRopeDurationRequired = "Jumping rope duration is required.";
+        public const string JumpingRopeDurationMustBeNumber = "Jumping rope duration must be a number.";
+        public const string JumpingRopeDurationMustBeGreaterThanZero = "Jumping rope duration must be greater than zero.";
+        public const string JumpingRopeDurationMaxValue = "Jumping rope duration must not exceed 240 minutes.";
+
+        public const string JumpingRopeIntensityFactorRequired = "Intensity factor for jumping rope is required.";
+        public const string JumpingRopeIntensityFactorMustBeNumber = "Intensity factor for jumping rope must be a number.";
+        public const string JumpingRopeIntensityFactorMustBeGreaterThanZero = "Intensity factor for jumping rope must be greater than zero.";
+        public const string JumpingRopeIntensityFactorMaxValue = "Intensity factor for jumping rope must not exceed 2";
+
+        // Walking Activity validation
+        public const string WalkingStepsRequired = "Number of steps is required.";
+        public const string WalkingStepsMustBeNumber = "Number of steps must be a number.";
+        public const string WalkingStepsMustBeGreaterThanZero = "Number of steps must be greater than zero.";
+
+        public const string WalkingDistanceRequired = "Walking distance is required.";
+        public const string WalkingDistanceMustBeNumber = "Walking distance must be a number.";
+        public const string WalkingDistanceMustBeGreaterThanZero = "Walking distance must be greater than zero.";
+        public const string WalkingDistanceMaxValue = "Walking distance must not exceed 100 km.";
+
+        public const string WalkingTimeTakenRequired = "Time taken for walking is required.";
+        public const string WalkingTimeTakenMustBeNumber = "Time taken for walking must be a number.";
+        public const string WalkingTimeTakenMustBeGreaterThanZero = "Time taken for walking must be greater than zero.";
+        public const string WalkingTimeTakenMaxValue = "Time taken for walking must not exceed 1440 minutes.";
+
     }
 }

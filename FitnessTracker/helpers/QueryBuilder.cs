@@ -35,13 +35,14 @@ namespace FitnessTracker.helpers
         }
 
         // Build SELECT command with JOIN support
-        public static MySqlCommand BuildSelectCommand(string table, string selectedColumns = "*", (string columnName, object columnValue)[] conditions = null, string logicalOperator = "AND", int? limit = null, string orderByColumn = null, bool ascending = true, params string[] joinClauses)
+        public static MySqlCommand BuildSelectCommand(string table, string selectedColumns = "*", (string columnName, object columnValue)[] conditions = null, string logicalOperator = "AND", int? limit = null, string orderByColumn = null, bool ascending = true, string[] joinClauses = null, string[] groupByColumns = null)
         {
             MySqlCommand command = db.CONN.CreateCommand();
             StringBuilder queryBuilder = new StringBuilder($"SELECT {selectedColumns} FROM {env.DatabaseName}.{table}");
 
             Join(queryBuilder, joinClauses);
             Where(command, queryBuilder, conditions, logicalOperator);
+            GroupBy(queryBuilder, groupByColumns); // Add GroupBy clause
             OrderBy(queryBuilder, orderByColumn, ascending);
             Limit(queryBuilder, limit);
 
@@ -49,10 +50,9 @@ namespace FitnessTracker.helpers
             return command;
         }
 
-        // Read data with JOIN support
-        public static MySqlDataReader Read(string table, string selectedColumns = "*", (string columnName, object columnValue)[] conditions = null, string logicalOperator = "AND", int? limit = null, string orderByColumn = null, bool ascending = true, params string[] joinClauses)
+        public static MySqlDataReader Read(string table, string selectedColumns = "*", (string columnName, object columnValue)[] conditions = null, string logicalOperator = "AND", int? limit = null, string orderByColumn = null, bool ascending = true, string[] joinClauses = null, string[] groupByColumns = null)
         {
-            MySqlCommand command = BuildSelectCommand(table, selectedColumns, conditions, logicalOperator, limit, orderByColumn, ascending, joinClauses);
+            MySqlCommand command = BuildSelectCommand(table, selectedColumns, conditions, logicalOperator, limit, orderByColumn, ascending, joinClauses, groupByColumns);
             db.OpenConnection();
             return command.ExecuteReader();
         }
@@ -178,6 +178,15 @@ namespace FitnessTracker.helpers
             if (limit.HasValue)
             {
                 queryBuilder.Append($" LIMIT {limit}");
+            }
+        }
+
+        private static void GroupBy(StringBuilder queryBuilder, string[] groupByColumns)
+        {
+            if (groupByColumns != null && groupByColumns.Length > 0)
+            {
+                queryBuilder.Append(" GROUP BY ");
+                queryBuilder.Append(string.Join(", ", groupByColumns));
             }
         }
     }

@@ -29,17 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.LegendItem legendItem4 = new System.Windows.Forms.DataVisualization.Charting.LegendItem();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.LegendItem legendItem2 = new System.Windows.Forms.DataVisualization.Charting.LegendItem();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Lbl_burn = new System.Windows.Forms.Label();
@@ -68,18 +60,18 @@
             this.Btn_link_setGoal = new System.Windows.Forms.Button();
             this.Btn_link_activities = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.panel_recent = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Lbl_activity_name_1 = new System.Windows.Forms.Label();
-            this.Lbl_calories_burned_1 = new System.Windows.Forms.Label();
-            this.Lbl_calories_burned_2 = new System.Windows.Forms.Label();
-            this.Lbl_activity_name_2 = new System.Windows.Forms.Label();
+            this.Lbl_no_recent = new System.Windows.Forms.Label();
             this.Lbl_calories_burned_3 = new System.Windows.Forms.Label();
             this.Lbl_activity_name_3 = new System.Windows.Forms.Label();
-            this.Lbl_no_recent = new System.Windows.Forms.Label();
+            this.Lbl_calories_burned_2 = new System.Windows.Forms.Label();
+            this.Lbl_activity_name_2 = new System.Windows.Forms.Label();
+            this.Lbl_calories_burned_1 = new System.Windows.Forms.Label();
+            this.Lbl_activity_name_1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ActivityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -88,8 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel_recent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ActivityChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -419,51 +411,6 @@
             this.button3.Text = "Progress monitoring";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // chart1
-            // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.CustomItems.Add(legendItem4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(25, 179);
-            this.chart1.Name = "chart1";
-            series25.ChartArea = "ChartArea1";
-            series25.Legend = "Legend1";
-            series25.Name = "Bycycling";
-            series26.ChartArea = "ChartArea1";
-            series26.Legend = "Legend1";
-            series26.Name = "Walking";
-            series27.ChartArea = "ChartArea1";
-            series27.Legend = "Legend1";
-            series27.Name = "Series3";
-            series28.ChartArea = "ChartArea1";
-            series28.Legend = "Legend1";
-            series28.Name = "Series4";
-            series29.ChartArea = "ChartArea1";
-            series29.Legend = "Legend1";
-            series29.Name = "Series5";
-            series30.ChartArea = "ChartArea1";
-            series30.Legend = "Legend1";
-            series30.Name = "Series6";
-            series31.ChartArea = "ChartArea1";
-            series31.Legend = "Legend1";
-            series31.Name = "Series7";
-            series32.ChartArea = "ChartArea1";
-            series32.Legend = "Legend1";
-            series32.Name = "Series8";
-            this.chart1.Series.Add(series25);
-            this.chart1.Series.Add(series26);
-            this.chart1.Series.Add(series27);
-            this.chart1.Series.Add(series28);
-            this.chart1.Series.Add(series29);
-            this.chart1.Series.Add(series30);
-            this.chart1.Series.Add(series31);
-            this.chart1.Series.Add(series32);
-            this.chart1.Size = new System.Drawing.Size(840, 194);
-            this.chart1.TabIndex = 10;
-            this.chart1.Text = "chart1";
-            // 
             // mySqlCommand1
             // 
             this.mySqlCommand1.CacheAge = 0;
@@ -488,6 +435,83 @@
             this.panel_recent.Size = new System.Drawing.Size(554, 246);
             this.panel_recent.TabIndex = 11;
             // 
+            // Lbl_no_recent
+            // 
+            this.Lbl_no_recent.AutoSize = true;
+            this.Lbl_no_recent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_no_recent.ForeColor = System.Drawing.Color.Gray;
+            this.Lbl_no_recent.Location = new System.Drawing.Point(193, 138);
+            this.Lbl_no_recent.Name = "Lbl_no_recent";
+            this.Lbl_no_recent.Size = new System.Drawing.Size(241, 24);
+            this.Lbl_no_recent.TabIndex = 12;
+            this.Lbl_no_recent.Text = "No Recent Activities Yet.";
+            // 
+            // Lbl_calories_burned_3
+            // 
+            this.Lbl_calories_burned_3.AutoSize = true;
+            this.Lbl_calories_burned_3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_calories_burned_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_calories_burned_3.Location = new System.Drawing.Point(458, 196);
+            this.Lbl_calories_burned_3.Name = "Lbl_calories_burned_3";
+            this.Lbl_calories_burned_3.Size = new System.Drawing.Size(70, 19);
+            this.Lbl_calories_burned_3.TabIndex = 11;
+            this.Lbl_calories_burned_3.Text = "400 kcal";
+            // 
+            // Lbl_activity_name_3
+            // 
+            this.Lbl_activity_name_3.AutoSize = true;
+            this.Lbl_activity_name_3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_activity_name_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Lbl_activity_name_3.Location = new System.Drawing.Point(20, 197);
+            this.Lbl_activity_name_3.Name = "Lbl_activity_name_3";
+            this.Lbl_activity_name_3.Size = new System.Drawing.Size(167, 24);
+            this.Lbl_activity_name_3.TabIndex = 10;
+            this.Lbl_activity_name_3.Text = "Recent Activities";
+            // 
+            // Lbl_calories_burned_2
+            // 
+            this.Lbl_calories_burned_2.AutoSize = true;
+            this.Lbl_calories_burned_2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_calories_burned_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_calories_burned_2.Location = new System.Drawing.Point(458, 152);
+            this.Lbl_calories_burned_2.Name = "Lbl_calories_burned_2";
+            this.Lbl_calories_burned_2.Size = new System.Drawing.Size(45, 19);
+            this.Lbl_calories_burned_2.TabIndex = 9;
+            this.Lbl_calories_burned_2.Text = "3000";
+            // 
+            // Lbl_activity_name_2
+            // 
+            this.Lbl_activity_name_2.AutoSize = true;
+            this.Lbl_activity_name_2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_activity_name_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Lbl_activity_name_2.Location = new System.Drawing.Point(20, 149);
+            this.Lbl_activity_name_2.Name = "Lbl_activity_name_2";
+            this.Lbl_activity_name_2.Size = new System.Drawing.Size(167, 24);
+            this.Lbl_activity_name_2.TabIndex = 8;
+            this.Lbl_activity_name_2.Text = "Recent Activities";
+            // 
+            // Lbl_calories_burned_1
+            // 
+            this.Lbl_calories_burned_1.AutoSize = true;
+            this.Lbl_calories_burned_1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_calories_burned_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_calories_burned_1.Location = new System.Drawing.Point(458, 106);
+            this.Lbl_calories_burned_1.Name = "Lbl_calories_burned_1";
+            this.Lbl_calories_burned_1.Size = new System.Drawing.Size(70, 19);
+            this.Lbl_calories_burned_1.TabIndex = 7;
+            this.Lbl_calories_burned_1.Text = "200 kcal";
+            // 
+            // Lbl_activity_name_1
+            // 
+            this.Lbl_activity_name_1.AutoSize = true;
+            this.Lbl_activity_name_1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_activity_name_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Lbl_activity_name_1.Location = new System.Drawing.Point(20, 101);
+            this.Lbl_activity_name_1.Name = "Lbl_activity_name_1";
+            this.Lbl_activity_name_1.Size = new System.Drawing.Size(167, 24);
+            this.Lbl_activity_name_1.TabIndex = 6;
+            this.Lbl_activity_name_1.Text = "Recent Activities";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -511,82 +535,23 @@
             this.label10.TabIndex = 5;
             this.label10.Text = "Recent Activities";
             // 
-            // Lbl_activity_name_1
+            // ActivityChart
             // 
-            this.Lbl_activity_name_1.AutoSize = true;
-            this.Lbl_activity_name_1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_activity_name_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Lbl_activity_name_1.Location = new System.Drawing.Point(20, 101);
-            this.Lbl_activity_name_1.Name = "Lbl_activity_name_1";
-            this.Lbl_activity_name_1.Size = new System.Drawing.Size(167, 24);
-            this.Lbl_activity_name_1.TabIndex = 6;
-            this.Lbl_activity_name_1.Text = "Recent Activities";
-            // 
-            // Lbl_calories_burned_1
-            // 
-            this.Lbl_calories_burned_1.AutoSize = true;
-            this.Lbl_calories_burned_1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_calories_burned_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Lbl_calories_burned_1.Location = new System.Drawing.Point(467, 106);
-            this.Lbl_calories_burned_1.Name = "Lbl_calories_burned_1";
-            this.Lbl_calories_burned_1.Size = new System.Drawing.Size(70, 19);
-            this.Lbl_calories_burned_1.TabIndex = 7;
-            this.Lbl_calories_burned_1.Text = "200 kcal";
-            // 
-            // Lbl_calories_burned_2
-            // 
-            this.Lbl_calories_burned_2.AutoSize = true;
-            this.Lbl_calories_burned_2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_calories_burned_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Lbl_calories_burned_2.Location = new System.Drawing.Point(467, 152);
-            this.Lbl_calories_burned_2.Name = "Lbl_calories_burned_2";
-            this.Lbl_calories_burned_2.Size = new System.Drawing.Size(45, 19);
-            this.Lbl_calories_burned_2.TabIndex = 9;
-            this.Lbl_calories_burned_2.Text = "3000";
-            // 
-            // Lbl_activity_name_2
-            // 
-            this.Lbl_activity_name_2.AutoSize = true;
-            this.Lbl_activity_name_2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_activity_name_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Lbl_activity_name_2.Location = new System.Drawing.Point(20, 149);
-            this.Lbl_activity_name_2.Name = "Lbl_activity_name_2";
-            this.Lbl_activity_name_2.Size = new System.Drawing.Size(167, 24);
-            this.Lbl_activity_name_2.TabIndex = 8;
-            this.Lbl_activity_name_2.Text = "Recent Activities";
-            // 
-            // Lbl_calories_burned_3
-            // 
-            this.Lbl_calories_burned_3.AutoSize = true;
-            this.Lbl_calories_burned_3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_calories_burned_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Lbl_calories_burned_3.Location = new System.Drawing.Point(467, 196);
-            this.Lbl_calories_burned_3.Name = "Lbl_calories_burned_3";
-            this.Lbl_calories_burned_3.Size = new System.Drawing.Size(70, 19);
-            this.Lbl_calories_burned_3.TabIndex = 11;
-            this.Lbl_calories_burned_3.Text = "400 kcal";
-            // 
-            // Lbl_activity_name_3
-            // 
-            this.Lbl_activity_name_3.AutoSize = true;
-            this.Lbl_activity_name_3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_activity_name_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Lbl_activity_name_3.Location = new System.Drawing.Point(20, 197);
-            this.Lbl_activity_name_3.Name = "Lbl_activity_name_3";
-            this.Lbl_activity_name_3.Size = new System.Drawing.Size(167, 24);
-            this.Lbl_activity_name_3.TabIndex = 10;
-            this.Lbl_activity_name_3.Text = "Recent Activities";
-            // 
-            // Lbl_no_recent
-            // 
-            this.Lbl_no_recent.AutoSize = true;
-            this.Lbl_no_recent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_no_recent.ForeColor = System.Drawing.Color.Gray;
-            this.Lbl_no_recent.Location = new System.Drawing.Point(193, 138);
-            this.Lbl_no_recent.Name = "Lbl_no_recent";
-            this.Lbl_no_recent.Size = new System.Drawing.Size(241, 24);
-            this.Lbl_no_recent.TabIndex = 12;
-            this.Lbl_no_recent.Text = "No Recent Activities Yet.";
+            this.ActivityChart.BorderlineWidth = 0;
+            chartArea2.Name = "ChartArea1";
+            this.ActivityChart.ChartAreas.Add(chartArea2);
+            legend2.CustomItems.Add(legendItem2);
+            legend2.Name = "Legend1";
+            this.ActivityChart.Legends.Add(legend2);
+            this.ActivityChart.Location = new System.Drawing.Point(26, 179);
+            this.ActivityChart.Name = "ActivityChart";
+            this.ActivityChart.Padding = new System.Windows.Forms.Padding(10);
+            this.ActivityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.ActivityChart.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Navy};
+            this.ActivityChart.Size = new System.Drawing.Size(839, 194);
+            this.ActivityChart.TabIndex = 30;
+            this.ActivityChart.Text = "Activity chart";
             // 
             // Dashboard
             // 
@@ -596,7 +561,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(894, 753);
             this.Controls.Add(this.panel_recent);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.ActivityChart);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Btn_link_activities);
             this.Controls.Add(this.Btn_link_setGoal);
@@ -622,9 +587,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel_recent.ResumeLayout(false);
             this.panel_recent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ActivityChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -653,7 +618,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button Lbl_logout;
         private System.Windows.Forms.Label Lbl_message;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label Lbl_percent;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -670,5 +634,6 @@
         private System.Windows.Forms.Label Lbl_activity_name_2;
         private System.Windows.Forms.Label Lbl_calories_burned_1;
         private System.Windows.Forms.Label Lbl_no_recent;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ActivityChart;
     }
 }

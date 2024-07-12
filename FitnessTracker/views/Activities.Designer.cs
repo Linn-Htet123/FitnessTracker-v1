@@ -36,18 +36,18 @@
             this.Lbl_error_password = new System.Windows.Forms.Label();
             this.Lbl_error_username = new System.Windows.Forms.Label();
             this.panel_activities = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_swimming = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_running = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_biking = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.Btn_yoga = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Btn_walking = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.Btn_jump_rope = new System.Windows.Forms.Button();
             this.Btn_back = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_back)).BeginInit();
@@ -122,18 +122,19 @@
             this.panel_activities.Size = new System.Drawing.Size(282, 384);
             this.panel_activities.TabIndex = 48;
             // 
-            // button1
+            // Btn_swimming
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(29, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 100);
-            this.button1.TabIndex = 53;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Btn_swimming.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Btn_swimming.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_swimming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_swimming.Image = ((System.Drawing.Image)(resources.GetObject("Btn_swimming.Image")));
+            this.Btn_swimming.Location = new System.Drawing.Point(29, 222);
+            this.Btn_swimming.Name = "Btn_swimming";
+            this.Btn_swimming.Size = new System.Drawing.Size(158, 100);
+            this.Btn_swimming.TabIndex = 53;
+            this.Btn_swimming.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_swimming.UseVisualStyleBackColor = false;
+            this.Btn_swimming.Click += new System.EventHandler(this.Btn_swimming_Click);
             // 
             // label4
             // 
@@ -176,24 +177,25 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(251, 181);
+            this.label3.Location = new System.Drawing.Point(261, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 21);
+            this.label3.Size = new System.Drawing.Size(65, 21);
             this.label3.TabIndex = 60;
-            this.label3.Text = "Bicycling";
+            this.label3.Text = "Biking";
             // 
-            // button3
+            // Btn_biking
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(218, 78);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 100);
-            this.button3.TabIndex = 59;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.Btn_biking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Btn_biking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_biking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_biking.Image = ((System.Drawing.Image)(resources.GetObject("Btn_biking.Image")));
+            this.Btn_biking.Location = new System.Drawing.Point(218, 78);
+            this.Btn_biking.Name = "Btn_biking";
+            this.Btn_biking.Size = new System.Drawing.Size(158, 100);
+            this.Btn_biking.TabIndex = 59;
+            this.Btn_biking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_biking.UseVisualStyleBackColor = false;
+            this.Btn_biking.Click += new System.EventHandler(this.Btn_biking_Click);
             // 
             // label5
             // 
@@ -231,18 +233,19 @@
             this.label6.TabIndex = 64;
             this.label6.Text = "Walking";
             // 
-            // button5
+            // Btn_walking
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(218, 362);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(158, 100);
-            this.button5.TabIndex = 63;
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
+            this.Btn_walking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Btn_walking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_walking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_walking.Image = ((System.Drawing.Image)(resources.GetObject("Btn_walking.Image")));
+            this.Btn_walking.Location = new System.Drawing.Point(218, 362);
+            this.Btn_walking.Name = "Btn_walking";
+            this.Btn_walking.Size = new System.Drawing.Size(158, 100);
+            this.Btn_walking.TabIndex = 63;
+            this.Btn_walking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_walking.UseVisualStyleBackColor = false;
+            this.Btn_walking.Click += new System.EventHandler(this.Btn_walking_Click);
             // 
             // label7
             // 
@@ -255,18 +258,19 @@
             this.label7.TabIndex = 62;
             this.label7.Text = "Jump rope";
             // 
-            // button6
+            // Btn_jump_rope
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(29, 362);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(158, 100);
-            this.button6.TabIndex = 61;
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
+            this.Btn_jump_rope.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Btn_jump_rope.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_jump_rope.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_jump_rope.Image = ((System.Drawing.Image)(resources.GetObject("Btn_jump_rope.Image")));
+            this.Btn_jump_rope.Location = new System.Drawing.Point(29, 362);
+            this.Btn_jump_rope.Name = "Btn_jump_rope";
+            this.Btn_jump_rope.Size = new System.Drawing.Size(158, 100);
+            this.Btn_jump_rope.TabIndex = 61;
+            this.Btn_jump_rope.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_jump_rope.UseVisualStyleBackColor = false;
+            this.Btn_jump_rope.Click += new System.EventHandler(this.Btn_jump_rope_Click);
             // 
             // Btn_back
             // 
@@ -299,17 +303,17 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Btn_back);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.Btn_walking);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.Btn_jump_rope);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Btn_biking);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Btn_yoga);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Btn_running);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_swimming);
             this.Controls.Add(this.panel_activities);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.Lbl_error_weight);
@@ -336,18 +340,18 @@
         private System.Windows.Forms.Label Lbl_error_password;
         private System.Windows.Forms.Label Lbl_error_username;
         private System.Windows.Forms.Panel panel_activities;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_swimming;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_running;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Btn_biking;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Btn_yoga;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Btn_walking;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Btn_jump_rope;
         private System.Windows.Forms.PictureBox Btn_back;
         private System.Windows.Forms.Label label8;
     }

@@ -146,10 +146,14 @@
     <Compile Include="utils\PasswordUtils.cs" />
     <Compile Include="utils\RenderValidationErrors.cs" />
     <Compile Include="utils\TextBoxUtils.cs" />
+    <Compile Include="validations\BikingValidation.cs" />
     <Compile Include="validations\GoalValidation.cs" />
+    <Compile Include="validations\JumpingRopeValidation.cs" />
     <Compile Include="validations\RunningValidation.cs" />
+    <Compile Include="validations\SwimmingValidation.cs" />
     <Compile Include="validations\UserValidator.cs" />
     <Compile Include="validations\ValidationMessages.cs" />
+    <Compile Include="validations\WalkingValidation.cs" />
     <Compile Include="validations\YogaValidation.cs" />
     <Compile Include="views\Activities.cs">
       <SubType>Form</SubType>
@@ -157,7 +161,12 @@
     <Compile Include="views\Activities.Designer.cs">
       <DependentUpon>Activities.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\BaseActivity.cs" />
+    <Compile Include="views\BikingActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\BikingActivity.Designer.cs">
+      <DependentUpon>BikingActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +179,12 @@
     <Compile Include="views\Goal.Designer.cs">
       <DependentUpon>Goal.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\JumpingRopeActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\JumpingRopeActivity.Designer.cs">
+      <DependentUpon>JumpingRopeActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\RunningActivity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +196,18 @@
     </Compile>
     <Compile Include="views\Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\SwimmingActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\SwimmingActivity.Designer.cs">
+      <DependentUpon>SwimmingActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\WalkingActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\WalkingActivity.Designer.cs">
+      <DependentUpon>WalkingActivity.cs</DependentUpon>
     </Compile>
     <Compile Include="views\YogaActivity.cs">
       <SubType>Form</SubType>
@@ -203,17 +230,29 @@
     <EmbeddedResource Include="views\Activities.resx">
       <DependentUpon>Activities.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\BikingActivity.resx">
+      <DependentUpon>BikingActivity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Goal.resx">
       <DependentUpon>Goal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\JumpingRopeActivity.resx">
+      <DependentUpon>JumpingRopeActivity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\RunningActivity.resx">
       <DependentUpon>RunningActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\SwimmingActivity.resx">
+      <DependentUpon>SwimmingActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\WalkingActivity.resx">
+      <DependentUpon>WalkingActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\YogaActivity.resx">
       <DependentUpon>YogaActivity.cs</DependentUpon>

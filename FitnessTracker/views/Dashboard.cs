@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static FitnessTracker.utils.ModalPopup;
 
 namespace FitnessTracker.views
@@ -25,6 +26,7 @@ namespace FitnessTracker.views
             LoadUserData();
             LoadCaloriesRate();
             LoadActivityLabels();
+            LoadActivityChart();
         }
 
         private void LoadUserData()
@@ -214,10 +216,38 @@ namespace FitnessTracker.views
             caloriesLabel.Text = "";
         }
 
-        private string FormatActivityLabel(Dictionary<string, object> activity)
+
+
+        private void LoadActivityChart()
         {
-            return $"{activity["activity_name"]}\t {activity["burned_calories"]} kcal";
+            var activityCounts = activityHistoriesController.GetActivityCount();
+            var totalActivities = activityCounts.Values.Sum();
+
+            ActivityChart.Series.Clear();
+            ActivityChart.ChartAreas[0].AxisY.Maximum = 100;
+
+
+            ActivityChart.Series.Add(new Series());
+            ActivityChart.Series[0].ChartType = SeriesChartType.Column;
+            ActivityChart.Series[0]["PixelPointWidth"] = "50";
+
+            foreach (var activityName in activityCounts.Keys)
+            {
+                var count = activityCounts.ContainsKey(activityName) ? activityCounts[activityName] : 0;
+                var percentage = totalActivities > 0 ? CalculatePercentage.GetPercentage(count, totalActivities) : 0;
+
+                var series = ActivityChart.Series[0];
+                series.Points.AddXY(activityName, percentage);
+            }
+
+            ActivityChart.ChartAreas[0].AxisX.Interval = 1;
+
+            ActivityChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            ActivityChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+
+            ActivityChart.Legends.Clear();
         }
+
 
     }
 }

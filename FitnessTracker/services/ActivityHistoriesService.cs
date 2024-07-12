@@ -59,6 +59,45 @@ namespace FitnessTracker.services
             return activityHistories;
         }
 
+        public static Dictionary<string, int> GetActivityCountsByUserId(int userId)
+        {
+            return ErrorHandling.HandleError(() =>
+            {
+                Dictionary<string, int> activityCounts = new Dictionary<string, int>();
+                foreach (ActivityTypesEnum activityType in Enum.GetValues(typeof(ActivityTypesEnum)))
+                {
+                    activityCounts[activityType.ToActivityName()] = 0;
+                }
+
+                foreach (ActivityTypesEnum activityType in Enum.GetValues(typeof(ActivityTypesEnum)))
+                {
+                    var conditions = new (string columnName, object columnValue)[]
+                    {
+                        ("user_id", userId),
+                    };
+
+
+                    using (MySqlDataReader reader = QueryBuilder.Read(
+                        ActivityHistoriesTable + " ah",
+                        "COUNT(*) as count, at.activity_name",
+                        conditions,
+                        joinClauses: new string[] { JoinClause },
+                        groupByColumns: new string[] { "ah.activity_type_id", "at.activity_name" }
+                    ))
+                    {
+                        while (reader.Read())
+                        {
+                            string activityName = reader.GetString("activity_name");
+                            int count = reader.GetInt32("count");
+                            activityCounts[activityName] = count;
+                        }
+                    }
+                }
+
+                return activityCounts;
+            });
+        }
+
         private static ActivityHistoriesDetails MapActivityHistoryDetails(MySqlDataReader reader)
         {
             return new ActivityHistoriesDetails(
