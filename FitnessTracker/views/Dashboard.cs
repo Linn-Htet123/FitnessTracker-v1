@@ -248,6 +248,9 @@ namespace FitnessTracker.views
             ActivityChart.Legends.Clear();
         }
 
-
+        private void Btn_progress_monitoring_Click(object sender, EventArgs e)
+        {
+            LinkForm.Link(this, new MonitorProgress());
+        }
     }
 }

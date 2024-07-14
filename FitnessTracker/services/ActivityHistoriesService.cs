@@ -9,6 +9,7 @@ namespace FitnessTracker.services
 {
     static internal class ActivityHistoriesService
     {
+        private static readonly ConnectDB db = new ConnectDB();
         private static readonly string ActivityHistoriesTable = Tables.ActivityHistories.ToTableName();
         private static readonly string ActivityTypesTable = Tables.ActivityTypes.ToTableName();
         private static readonly string JoinClause = $"JOIN {ActivityTypesTable} at ON ah.activity_type_id = at.id";
@@ -115,6 +116,73 @@ namespace FitnessTracker.services
                 reader.GetString("metric3_unit")
             );
         }
+
+        private static double GetTotalCaloriesBurnedForDateRange(int userId, DateTime startDate, DateTime endDate)
+        {
+            double totalCaloriesBurned = 0;
+
+            // Construct the SQL query string
+            string query = $"SELECT SUM(burned_calories) AS totalCalories FROM fitness_tracker.activity_histories " +
+                           $"WHERE user_id = @userId AND created_at >= @startDate AND created_at <= @endDate";
+
+
+            MySqlCommand command = new MySqlCommand(query, db.CONN);
+            command.Parameters.AddWithValue("@userId", userId);
+            command.Parameters.AddWithValue("@startDate", startDate.ToString("yyyy-MM-dd HH:mm:ss"));
+            command.Parameters.AddWithValue("@endDate", endDate.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            Console.WriteLine(startDate.ToString("yyyy-MM-dd HH:mm:ss"));
+            Console.WriteLine("end:");
+            Console.WriteLine(endDate.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            try
+            {
+                db.OpenConnection();
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        totalCaloriesBurned = reader.IsDBNull(0) ? 0 : reader.GetDouble("totalCalories");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error executing SQL query: {ex.Message}");
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+
+
+            Console.WriteLine(query);
+            Console.WriteLine($"totalCaloriesBurned: {totalCaloriesBurned}");
+
+            return totalCaloriesBurned;
+        }
+
+
+        public static double GetTotalCaloriesBurnedToday(int userId)
+        {
+            return ErrorHandling.HandleError(() =>
+            {
+                DateTime today = DateTime.Today;
+                DateTime tomorrow = today.AddDays(1);
+                Console.WriteLine($"{userId}, {today}, {tomorrow}");
+                return GetTotalCaloriesBurnedForDateRange(userId, today, tomorrow);
+            });
+        }
+
+
+        public static double GetTotalCaloriesBurnedByDateRange(int userId, DateTime startDate, DateTime endDate)
+        {
+            return ErrorHandling.HandleError(() =>
+            {
+                return GetTotalCaloriesBurnedForDateRange(userId, startDate, endDate);
+            });
+        }
+
 
         private static Dictionary<string, object> MapReaderToDictionary(MySqlDataReader reader)
         {

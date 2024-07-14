@@ -30,5 +30,10 @@ namespace FitnessTracker.controllers
         {
             return UpdateCurrentGoalCalories(userId, burnedCalories);
         }
+
+        public int GetTotalAchievementGoals()
+        {
+            return GetTotalAchievementGoalsByUser(userId);
+        }
     }
 }

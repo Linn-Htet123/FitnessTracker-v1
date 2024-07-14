@@ -135,6 +135,22 @@ namespace FitnessTracker.services
             });
         }
 
+        // Calculate total goals getting achievement count
+        public static int GetTotalAchievementGoalsByUser(int userId)
+        {
+            return ErrorHandling.HandleError(() =>
+            {
+                var conditions = new (string columnName, object columnValue)[]
+                {
+                    ("user_id", userId),
+                    ("is_complete", true)
+                };
+
+                var totalCounts = QueryBuilder.CountRows(GoalsTable, conditions: conditions);
+                return totalCounts;
+            });
+        }
+
         // Calculate total calories burned by user through goals
         public static double GetTotalCaloriesBurnedByUser(int userId)
         {
@@ -160,7 +176,6 @@ namespace FitnessTracker.services
                 {
                     ("user_id", userId),
                 };
-                Console.WriteLine($"userID: {userId}");
 
                 using (var reader = QueryBuilder.Read(GoalsTable, conditions: conditions, orderByColumn: "created_at", ascending: false, limit: 1))
                 {

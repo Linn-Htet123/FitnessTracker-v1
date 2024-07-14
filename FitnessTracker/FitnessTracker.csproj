@@ -185,6 +185,12 @@
     <Compile Include="views\JumpingRopeActivity.Designer.cs">
       <DependentUpon>JumpingRopeActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\MonitorProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\MonitorProgress.Designer.cs">
+      <DependentUpon>MonitorProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\RunningActivity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     <EmbeddedResource Include="views\JumpingRopeActivity.resx">
       <DependentUpon>JumpingRopeActivity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\MonitorProgress.resx">
+      <DependentUpon>MonitorProgress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\RunningActivity.resx">
       <DependentUpon>RunningActivity.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +296,7 @@
     <Content Include="assets\scale.png" />
     <Content Include="assets\signup.jpg" />
     <Content Include="assets\swimming.png" />
+    <Content Include="assets\user.png" />
     <Content Include="assets\walking.png" />
     <Content Include="assets\yoga.png" />
   </ItemGroup>

@@ -68,7 +68,7 @@ namespace FitnessTracker.validations
             result = Validator.HasMaxLength(username, 20, ValidationMessages.UsernameMaxLength);
             if (!result.IsValid) return result;
 
-            return Validator.MatchesRegex(username, @"^[a-zA-Z0-9 ]+$", ValidationMessages.UsernameInvalidCharacters);
+            return Validator.MatchesRegex(username, @"^[a-zA-Z0-9]+$", ValidationMessages.UsernameInvalidCharacters);
         }
 
         private static ValidationResult ValidatePassword(string password)

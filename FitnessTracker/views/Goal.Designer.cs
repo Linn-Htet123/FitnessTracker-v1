@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_back = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_back)).BeginInit();
@@ -52,7 +53,7 @@
             this.panel1.Controls.Add(this.Txt_goal);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(25, 56);
+            this.panel1.Location = new System.Drawing.Point(25, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(388, 220);
             this.panel1.TabIndex = 0;
@@ -70,7 +71,9 @@
             // Btn_goal
             // 
             this.Btn_goal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Btn_goal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_goal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_goal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_goal.ForeColor = System.Drawing.Color.White;
             this.Btn_goal.Location = new System.Drawing.Point(20, 163);
             this.Btn_goal.Name = "Btn_goal";
@@ -122,6 +125,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.Btn_back);
             this.panel2.Location = new System.Drawing.Point(-3, 2);
             this.panel2.Name = "panel2";
@@ -140,6 +144,17 @@
             this.Btn_back.TabStop = false;
             this.Btn_back.Click += new System.EventHandler(this.Btn_back_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(168, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 27);
+            this.label8.TabIndex = 67;
+            this.label8.Text = "Set Goals";
+            // 
             // Goal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -155,6 +170,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_back)).EndInit();
             this.ResumeLayout(false);
 
@@ -171,5 +187,6 @@
         private System.Windows.Forms.Button Btn_goal;
         private System.Windows.Forms.Label Lbl_error_goal;
         private System.Windows.Forms.PictureBox Btn_back;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FitnessTracker.models;
 using FitnessTracker.services;
+using System;
 using System.Collections.Generic;
 using static FitnessTracker.services.ActivityHistoriesService;
 
@@ -22,6 +23,16 @@ namespace FitnessTracker.controllers
         public Dictionary<string, int> GetActivityCount()
         {
             return GetActivityCountsByUserId(userId);
+        }
+
+        public double GetDailyCaloriesBurned()
+        {
+            return GetTotalCaloriesBurnedToday(userId);
+        }
+
+        public double GetDateRangeCaloriesBurned(DateTime startDate, DateTime endDate)
+        {
+            return GetTotalCaloriesBurnedByDateRange(userId, startDate, endDate);
         }
     }
 }

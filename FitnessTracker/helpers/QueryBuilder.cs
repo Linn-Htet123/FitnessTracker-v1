@@ -160,6 +160,24 @@ namespace FitnessTracker.helpers
             }
         }
 
+        private static void Where(MySqlCommand command, StringBuilder queryBuilder, (string columnName, object columnValue, string comparisonOperator)[] conditions, string logicalOperator = "AND")
+        {
+            if (conditions != null && conditions.Length > 0)
+            {
+                queryBuilder.Append(" WHERE ");
+                List<string> conditionStrings = new List<string>();
+
+                for (int i = 0; i < conditions.Length; i++)
+                {
+                    string paramName = $"@value{i}";
+                    string operatorSymbol = conditions[i].comparisonOperator ?? "="; // Default to '=' if operator is null
+                    conditionStrings.Add($"{conditions[i].columnName} {operatorSymbol} {paramName}");
+                    command.Parameters.AddWithValue(paramName, conditions[i].columnValue);
+                }
+                queryBuilder.Append(string.Join($" {logicalOperator} ", conditionStrings));
+            }
+        }
+
         private static void OrderBy(StringBuilder queryBuilder, string orderByColumn, bool ascending = false)
         {
             if (!string.IsNullOrEmpty(orderByColumn))

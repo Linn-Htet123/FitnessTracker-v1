@@ -46,7 +46,9 @@ namespace FitnessTracker
         private void OnLockoutCompleted()
         {
             Btn_login.Enabled = true;
-            Btn_login.BackColor = Color.Black;
+            Txt_username.Enabled = true;
+            Txt_password.Enabled = true;
+            Btn_login.BackColor = Color.FromArgb(0, 0, 64);
             Lbl_lockout.Text = string.Empty;
             loginAttempts = 0;
         }
@@ -71,6 +73,8 @@ namespace FitnessTracker
         private void DisableLogin()
         {
             Btn_login.Enabled = false;
+            Txt_username.Enabled = false;
+            Txt_password.Enabled = false;
             Btn_login.BackColor = Color.Gray;
             lockoutTimer.Start();
         }

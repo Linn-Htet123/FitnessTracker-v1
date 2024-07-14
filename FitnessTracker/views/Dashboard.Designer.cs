@@ -59,7 +59,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Btn_link_setGoal = new System.Windows.Forms.Button();
             this.Btn_link_activities = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_progress_monitoring = new System.Windows.Forms.Button();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.panel_recent = new System.Windows.Forms.Panel();
             this.Lbl_no_recent = new System.Windows.Forms.Label();
@@ -72,6 +72,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ActivityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -215,6 +216,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.Lbl_username);
             this.panel1.Controls.Add(this.Lbl_logout);
@@ -397,19 +399,20 @@
             this.Btn_link_activities.UseVisualStyleBackColor = false;
             this.Btn_link_activities.Click += new System.EventHandler(this.Btn_link_activities_Click);
             // 
-            // button3
+            // Btn_progress_monitoring
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(601, 657);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(264, 74);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Progress monitoring";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Btn_progress_monitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Btn_progress_monitoring.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_progress_monitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_progress_monitoring.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_progress_monitoring.ForeColor = System.Drawing.Color.White;
+            this.Btn_progress_monitoring.Location = new System.Drawing.Point(601, 657);
+            this.Btn_progress_monitoring.Name = "Btn_progress_monitoring";
+            this.Btn_progress_monitoring.Size = new System.Drawing.Size(264, 74);
+            this.Btn_progress_monitoring.TabIndex = 7;
+            this.Btn_progress_monitoring.Text = "Progress monitoring";
+            this.Btn_progress_monitoring.UseVisualStyleBackColor = false;
+            this.Btn_progress_monitoring.Click += new System.EventHandler(this.Btn_progress_monitoring_Click);
             // 
             // mySqlCommand1
             // 
@@ -553,6 +556,20 @@
             this.ActivityChart.TabIndex = 30;
             this.ActivityChart.Text = "Activity chart";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(674, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 39);
+            this.button1.TabIndex = 56;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -562,7 +579,7 @@
             this.ClientSize = new System.Drawing.Size(894, 753);
             this.Controls.Add(this.panel_recent);
             this.Controls.Add(this.ActivityChart);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Btn_progress_monitoring);
             this.Controls.Add(this.Btn_link_activities);
             this.Controls.Add(this.Btn_link_setGoal);
             this.Controls.Add(this.panel2);
@@ -615,7 +632,7 @@
         private System.Windows.Forms.Label Lbl_percentage;
         private System.Windows.Forms.Button Btn_link_setGoal;
         private System.Windows.Forms.Button Btn_link_activities;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Btn_progress_monitoring;
         private System.Windows.Forms.Button Lbl_logout;
         private System.Windows.Forms.Label Lbl_message;
         private System.Windows.Forms.Label Lbl_percent;
@@ -635,5 +652,6 @@
         private System.Windows.Forms.Label Lbl_calories_burned_1;
         private System.Windows.Forms.Label Lbl_no_recent;
         private System.Windows.Forms.DataVisualization.Charting.Chart ActivityChart;
+        private System.Windows.Forms.Button button1;
     }
 }
