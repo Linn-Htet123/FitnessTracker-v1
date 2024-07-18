@@ -9,7 +9,6 @@ namespace FitnessTracker.models
         private readonly string username;
         private readonly double weight;
         private readonly double height;
-        private readonly double total_calories_burned;
         private bool isAuthenticated;
 
 
@@ -18,17 +17,15 @@ namespace FitnessTracker.models
         public string Username => username;
         public double Weight => weight;
         public double Height => height;
-        public double TotalCaloriesBurned => total_calories_burned;
         public bool IsAuthenticated => isAuthenticated;
 
         // Constructor to initialize the user
-        public User(int id, string username, double weight, double height, double totalCaloriesBurned = 0)
+        public User(int id, string username, double weight, double height)
         {
             this.user_id = id;
             this.username = username;
             this.weight = weight;
             this.height = height;
-            this.total_calories_burned = totalCaloriesBurned;
             this.isAuthenticated = false;
         }
 

@@ -54,7 +54,7 @@ namespace FitnessTracker.services
                 }
 
                 // Create a new User instance and authenticate it
-                var newUser = new User(userId, username, weight, height, 0);
+                var newUser = new User(userId, username, weight, height);
                 newUser.Authenticate();
 
                 // Store the current user in application state
@@ -86,8 +86,7 @@ namespace FitnessTracker.services
                                 Convert.ToInt32(reader["id"]),
                                 reader["username"].ToString(),
                                 Convert.ToDouble(reader["weight"]),
-                                Convert.ToDouble(reader["height"]),
-                                Convert.ToDouble(reader["total_calories_burned"])
+                                Convert.ToDouble(reader["height"])
                             );
 
                             user.Authenticate();
@@ -127,7 +126,7 @@ namespace FitnessTracker.services
                 }
 
                 // Update the current user's state if the update is successful
-                var updatedUser = new User(currentUser.UserId, currentUser.Username, newWeight, newHeight, 0);
+                var updatedUser = new User(currentUser.UserId, currentUser.Username, newWeight, newHeight);
                 StoreServices.SetState(updatedUser, "CurrentUser");
 
                 return true;

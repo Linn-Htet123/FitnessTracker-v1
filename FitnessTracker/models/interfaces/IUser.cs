@@ -6,8 +6,6 @@
         string Username { get; }
         double Weight { get; }
         double Height { get; }
-        double TotalCaloriesBurned { get; }
-
         bool IsAuthenticated { get; }
 
         void Authenticate();
