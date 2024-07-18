@@ -131,7 +131,7 @@
             this.Txt_height.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Txt_height.Name = "Txt_height";
             this.Txt_height.Size = new System.Drawing.Size(243, 28);
-            this.Txt_height.TabIndex = 27;
+            this.Txt_height.TabIndex = 4;
             // 
             // label8
             // 
@@ -162,7 +162,7 @@
             this.Txt_weight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Txt_weight.Name = "Txt_weight";
             this.Txt_weight.Size = new System.Drawing.Size(243, 28);
-            this.Txt_weight.TabIndex = 24;
+            this.Txt_weight.TabIndex = 3;
             // 
             // Chk_confirm_password_show
             // 
@@ -197,7 +197,7 @@
             this.Txt_confirm_password.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Txt_confirm_password.Name = "Txt_confirm_password";
             this.Txt_confirm_password.Size = new System.Drawing.Size(243, 28);
-            this.Txt_confirm_password.TabIndex = 20;
+            this.Txt_confirm_password.TabIndex = 2;
             this.Txt_confirm_password.UseSystemPasswordChar = true;
             // 
             // Lbl_error_confirm_password
@@ -215,7 +215,7 @@
             this.Lbl_link_login.AutoSize = true;
             this.Lbl_link_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Lbl_link_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Lbl_link_login.Location = new System.Drawing.Point(219, 622);
+            this.Lbl_link_login.Location = new System.Drawing.Point(224, 622);
             this.Lbl_link_login.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_link_login.Name = "Lbl_link_login";
             this.Lbl_link_login.Size = new System.Drawing.Size(38, 16);
@@ -226,7 +226,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(86, 622);
+            this.label5.Location = new System.Drawing.Point(91, 622);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(156, 16);
@@ -300,7 +300,7 @@
             this.Txt_password.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Txt_password.Name = "Txt_password";
             this.Txt_password.Size = new System.Drawing.Size(243, 28);
-            this.Txt_password.TabIndex = 9;
+            this.Txt_password.TabIndex = 1;
             this.Txt_password.UseSystemPasswordChar = true;
             // 
             // Lbl_error_password
@@ -347,7 +347,7 @@
             this.Btn_signup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Btn_signup.Name = "Btn_signup";
             this.Btn_signup.Size = new System.Drawing.Size(241, 39);
-            this.Btn_signup.TabIndex = 1;
+            this.Btn_signup.TabIndex = 5;
             this.Btn_signup.Text = "Sign up";
             this.Btn_signup.UseVisualStyleBackColor = false;
             this.Btn_signup.Click += new System.EventHandler(this.Btn_signup_Click);

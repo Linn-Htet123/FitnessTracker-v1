@@ -3,8 +3,18 @@ using System.Collections.Generic;
 
 namespace FitnessTracker.validations
 {
+    /// <summary>
+    /// Validation class for validating input related to biking activities.
+    /// </summary>
     internal class BikingValidation
     {
+        /// <summary>
+        /// Validates biking activity inputs for distance, time taken, and speed.
+        /// </summary>
+        /// <param name="distance">The distance input to validate.</param>
+        /// <param name="timeTaken">The time taken input to validate.</param>
+        /// <param name="speed">The speed input to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
         public static ValidationResult ValidateBiking(string distance, string timeTaken, string speed)
         {
             var errors = new Dictionary<string, string>();

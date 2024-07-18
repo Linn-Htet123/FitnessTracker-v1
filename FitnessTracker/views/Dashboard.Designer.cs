@@ -45,6 +45,7 @@
             this.Lbl_weight = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_profile = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.Lbl_username = new System.Windows.Forms.Label();
             this.Lbl_logout = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ActivityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Lbl_no_activities = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
@@ -216,7 +217,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.Btn_profile);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.Lbl_username);
             this.panel1.Controls.Add(this.Lbl_logout);
@@ -225,6 +226,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(891, 128);
             this.panel1.TabIndex = 3;
+            // 
+            // Btn_profile
+            // 
+            this.Btn_profile.BackColor = System.Drawing.Color.White;
+            this.Btn_profile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_profile.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_profile.ForeColor = System.Drawing.Color.Black;
+            this.Btn_profile.Image = ((System.Drawing.Image)(resources.GetObject("Btn_profile.Image")));
+            this.Btn_profile.Location = new System.Drawing.Point(674, 21);
+            this.Btn_profile.Name = "Btn_profile";
+            this.Btn_profile.Size = new System.Drawing.Size(37, 39);
+            this.Btn_profile.TabIndex = 56;
+            this.Btn_profile.UseVisualStyleBackColor = false;
+            this.Btn_profile.Click += new System.EventHandler(this.Btn_profile_Click);
             // 
             // panel7
             // 
@@ -454,7 +470,7 @@
             this.Lbl_calories_burned_3.AutoSize = true;
             this.Lbl_calories_burned_3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_calories_burned_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Lbl_calories_burned_3.Location = new System.Drawing.Point(458, 196);
+            this.Lbl_calories_burned_3.Location = new System.Drawing.Point(436, 196);
             this.Lbl_calories_burned_3.Name = "Lbl_calories_burned_3";
             this.Lbl_calories_burned_3.Size = new System.Drawing.Size(70, 19);
             this.Lbl_calories_burned_3.TabIndex = 11;
@@ -476,7 +492,7 @@
             this.Lbl_calories_burned_2.AutoSize = true;
             this.Lbl_calories_burned_2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_calories_burned_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Lbl_calories_burned_2.Location = new System.Drawing.Point(458, 152);
+            this.Lbl_calories_burned_2.Location = new System.Drawing.Point(436, 152);
             this.Lbl_calories_burned_2.Name = "Lbl_calories_burned_2";
             this.Lbl_calories_burned_2.Size = new System.Drawing.Size(45, 19);
             this.Lbl_calories_burned_2.TabIndex = 9;
@@ -498,7 +514,7 @@
             this.Lbl_calories_burned_1.AutoSize = true;
             this.Lbl_calories_burned_1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_calories_burned_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Lbl_calories_burned_1.Location = new System.Drawing.Point(458, 106);
+            this.Lbl_calories_burned_1.Location = new System.Drawing.Point(436, 106);
             this.Lbl_calories_burned_1.Name = "Lbl_calories_burned_1";
             this.Lbl_calories_burned_1.Size = new System.Drawing.Size(70, 19);
             this.Lbl_calories_burned_1.TabIndex = 7;
@@ -556,19 +572,17 @@
             this.ActivityChart.TabIndex = 30;
             this.ActivityChart.Text = "Activity chart";
             // 
-            // button1
+            // Lbl_no_activities
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(674, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 39);
-            this.button1.TabIndex = 56;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Lbl_no_activities.AutoSize = true;
+            this.Lbl_no_activities.BackColor = System.Drawing.Color.White;
+            this.Lbl_no_activities.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_no_activities.ForeColor = System.Drawing.Color.Gray;
+            this.Lbl_no_activities.Location = new System.Drawing.Point(352, 262);
+            this.Lbl_no_activities.Name = "Lbl_no_activities";
+            this.Lbl_no_activities.Size = new System.Drawing.Size(255, 24);
+            this.Lbl_no_activities.TabIndex = 13;
+            this.Lbl_no_activities.Text = "There is not activities yet.";
             // 
             // Dashboard
             // 
@@ -577,6 +591,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(894, 753);
+            this.Controls.Add(this.Lbl_no_activities);
             this.Controls.Add(this.panel_recent);
             this.Controls.Add(this.ActivityChart);
             this.Controls.Add(this.Btn_progress_monitoring);
@@ -608,6 +623,7 @@
             this.panel_recent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ActivityChart)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -652,6 +668,7 @@
         private System.Windows.Forms.Label Lbl_calories_burned_1;
         private System.Windows.Forms.Label Lbl_no_recent;
         private System.Windows.Forms.DataVisualization.Charting.Chart ActivityChart;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_profile;
+        private System.Windows.Forms.Label Lbl_no_activities;
     }
 }

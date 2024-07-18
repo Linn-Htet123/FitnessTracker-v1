@@ -10,6 +10,7 @@ namespace FitnessTracker.services
     {
         private static readonly string UsersTable = Tables.Users.ToTableName();
 
+        // Check if a username already exists in the database
         public static bool IsUsernameExists(string username)
         {
             return ErrorHandling.HandleError(() =>
@@ -26,6 +27,7 @@ namespace FitnessTracker.services
             });
         }
 
+        // Register a new user with the given username, password, weight, and height
         public static bool RegisterUser(string username, string password, double weight, double height)
         {
             return ErrorHandling.HandleError(() =>
@@ -51,15 +53,18 @@ namespace FitnessTracker.services
                     return false;
                 }
 
+                // Create a new User instance and authenticate it
                 var newUser = new User(userId, username, weight, height, 0);
                 newUser.Authenticate();
+
+                // Store the current user in application state
                 StoreServices.SetState(newUser, "CurrentUser");
 
                 return newUser.IsAuthenticated;
             });
         }
 
-
+        // Authenticate a user with the given username and password
         public static bool AuthenticateUser(string username, string password)
         {
             return ErrorHandling.HandleError(() =>
@@ -76,16 +81,20 @@ namespace FitnessTracker.services
                         string storedHash = reader["password"].ToString();
                         if (Hasher.Verify(password, storedHash))
                         {
+                            // Create a User instance and authenticate it
                             var user = new User(
                                 Convert.ToInt32(reader["id"]),
                                 reader["username"].ToString(),
                                 Convert.ToDouble(reader["weight"]),
                                 Convert.ToDouble(reader["height"]),
                                 Convert.ToDouble(reader["total_calories_burned"])
-                                );
+                            );
 
                             user.Authenticate();
+
+                            // Store the current user in application state
                             StoreServices.SetState(user, "CurrentUser");
+
                             return user.IsAuthenticated;
                         }
                     }
@@ -94,6 +103,38 @@ namespace FitnessTracker.services
             });
         }
 
+        // Update the weight and height of the current user
+        public static bool UpdateUserWeightAndHeight(double newWeight, double newHeight)
+        {
+            return ErrorHandling.HandleError(() =>
+            {
+                var currentUser = StoreServices.GetState<User>("CurrentUser");
+                var conditions = new (string columnName, object columnValue)[]
+                {
+                    ("id", currentUser.UserId),
+                };
+
+                var updates = new (string columnName, object columnValue)[]
+                {
+                    ("weight", newWeight),
+                    ("height", newHeight),
+                };
+
+                int rowsAffected = QueryBuilder.Update(UsersTable, updates, conditions);
+                if (rowsAffected <= 0)
+                {
+                    return false;
+                }
+
+                // Update the current user's state if the update is successful
+                var updatedUser = new User(currentUser.UserId, currentUser.Username, newWeight, newHeight, 0);
+                StoreServices.SetState(updatedUser, "CurrentUser");
+
+                return true;
+            });
+        }
+
+        // Logout the current user by clearing their state from application state
         public static void LogoutUser()
         {
             ErrorHandling.HandleError(() =>

@@ -48,11 +48,11 @@
             this.Date_to = new System.Windows.Forms.DateTimePicker();
             this.Btn_filter = new System.Windows.Forms.Button();
             this.Grid_activity_histories = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_burned = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_back)).BeginInit();
             this.panel2.SuspendLayout();
@@ -99,7 +99,7 @@
             this.panel2.Controls.Add(this.Lbl_day_msg);
             this.panel2.Controls.Add(this.Lbl_total_calories);
             this.panel2.Controls.Add(this.Lbl_burend);
-            this.panel2.Location = new System.Drawing.Point(38, 138);
+            this.panel2.Location = new System.Drawing.Point(38, 145);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(492, 117);
             this.panel2.TabIndex = 1;
@@ -145,7 +145,7 @@
             this.Btn_today.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_today.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_today.ForeColor = System.Drawing.Color.White;
-            this.Btn_today.Location = new System.Drawing.Point(473, 102);
+            this.Btn_today.Location = new System.Drawing.Point(473, 109);
             this.Btn_today.Name = "Btn_today";
             this.Btn_today.Size = new System.Drawing.Size(57, 30);
             this.Btn_today.TabIndex = 2;
@@ -158,7 +158,7 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.Lbl_total_goals);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(548, 138);
+            this.panel3.Location = new System.Drawing.Point(548, 145);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(310, 117);
             this.panel3.TabIndex = 12;
@@ -188,7 +188,7 @@
             // 
             // Date_from
             // 
-            this.Date_from.Location = new System.Drawing.Point(38, 105);
+            this.Date_from.Location = new System.Drawing.Point(38, 112);
             this.Date_from.Name = "Date_from";
             this.Date_from.Size = new System.Drawing.Size(154, 22);
             this.Date_from.TabIndex = 13;
@@ -197,7 +197,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 79);
+            this.label1.Location = new System.Drawing.Point(35, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 14;
@@ -207,7 +207,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(195, 79);
+            this.label3.Location = new System.Drawing.Point(195, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 17);
             this.label3.TabIndex = 16;
@@ -215,7 +215,7 @@
             // 
             // Date_to
             // 
-            this.Date_to.Location = new System.Drawing.Point(198, 105);
+            this.Date_to.Location = new System.Drawing.Point(198, 112);
             this.Date_to.Name = "Date_to";
             this.Date_to.Size = new System.Drawing.Size(154, 22);
             this.Date_to.TabIndex = 15;
@@ -227,7 +227,7 @@
             this.Btn_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_filter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_filter.ForeColor = System.Drawing.Color.White;
-            this.Btn_filter.Location = new System.Drawing.Point(358, 101);
+            this.Btn_filter.Location = new System.Drawing.Point(358, 108);
             this.Btn_filter.Name = "Btn_filter";
             this.Btn_filter.Size = new System.Drawing.Size(65, 30);
             this.Btn_filter.TabIndex = 12;
@@ -245,7 +245,7 @@
             this.Name,
             this.Total_burned});
             this.Grid_activity_histories.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Grid_activity_histories.Location = new System.Drawing.Point(38, 304);
+            this.Grid_activity_histories.Location = new System.Drawing.Point(38, 311);
             this.Grid_activity_histories.Name = "Grid_activity_histories";
             this.Grid_activity_histories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -264,9 +264,20 @@
             this.Grid_activity_histories.Size = new System.Drawing.Size(820, 385);
             this.Grid_activity_histories.TabIndex = 17;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(34, 277);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(170, 24);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Activity Histories";
+            // 
             // No
             // 
-            this.No.HeaderText = "No.";
+            this.No.HeaderText = "No";
             this.No.MinimumWidth = 6;
             this.No.Name = "No";
             this.No.Width = 62;
@@ -292,23 +303,12 @@
             this.Total_burned.Name = "Total_burned";
             this.Total_burned.Width = 250;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(34, 270);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 24);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Activity Histories";
-            // 
             // MonitorProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(894, 701);
+            this.ClientSize = new System.Drawing.Size(894, 710);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Grid_activity_histories);
             this.Controls.Add(this.Btn_filter);

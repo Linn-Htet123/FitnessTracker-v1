@@ -1,9 +1,18 @@
 ﻿using FitnessTracker.enums;
 using System;
+
 namespace FitnessTracker.utils
 {
+    /// <summary>
+    /// Utility class for date-related operations.
+    /// </summary>
     static class Date
     {
+        /// <summary>
+        /// Generates a greeting based on the time of day and day of the week.
+        /// </summary>
+        /// <param name="date">The date/time to generate the greeting for.</param>
+        /// <returns>A string greeting based on the time of day and day of the week.</returns>
         public static string GetGreet(DateTime date)
         {
             int hour = date.Hour;
@@ -40,6 +49,12 @@ namespace FitnessTracker.utils
             return "Good evening";
         }
 
+        /// <summary>
+        /// Determines the completion status of a goal based on its creation and completion times.
+        /// </summary>
+        /// <param name="created_at">The date/time when the goal was created.</param>
+        /// <param name="completed_at">The optional date/time when the goal was completed.</param>
+        /// <returns>The completion status of the goal.</returns>
         public static GoalCompletionStatus GetCompletionStatus(DateTime created_at, DateTime? completed_at)
         {
             if (completed_at == null)

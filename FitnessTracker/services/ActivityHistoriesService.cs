@@ -15,6 +15,7 @@ namespace FitnessTracker.services
         private static readonly string JoinClause = $"JOIN {ActivityTypesTable} at ON ah.activity_type_id = at.id";
         private static readonly string SelectedColumns = "ah.*, at.activity_name, at.metric1_name, at.metric1_unit, at.metric2_name, at.metric2_unit, at.metric3_name, at.metric3_unit";
 
+        // Create an activity history record for a user
         public static bool CreateActivity(int userId, int activityTypeId, double burnedCalories)
         {
             return ErrorHandling.HandleError(() =>
@@ -32,6 +33,7 @@ namespace FitnessTracker.services
             });
         }
 
+        // Retrieve detailed activity history by ID
         public static ActivityHistoriesDetails GetActivityHistoryDetailById(int id)
         {
             return ErrorHandling.HandleError(() =>
@@ -45,6 +47,7 @@ namespace FitnessTracker.services
             });
         }
 
+        // Retrieve all activity histories for a user
         public static List<Dictionary<string, object>> GetActivityHistoriesByUserId(int userId)
         {
             List<Dictionary<string, object>> activityHistories = new List<Dictionary<string, object>>();
@@ -60,6 +63,7 @@ namespace FitnessTracker.services
             return activityHistories;
         }
 
+        // Retrieve counts of activities by type for a user
         public static Dictionary<string, int> GetActivityCountsByUserId(int userId)
         {
             return ErrorHandling.HandleError(() =>
@@ -76,7 +80,6 @@ namespace FitnessTracker.services
                     {
                         ("user_id", userId),
                     };
-
 
                     using (MySqlDataReader reader = QueryBuilder.Read(
                         ActivityHistoriesTable + " ah",
@@ -99,6 +102,7 @@ namespace FitnessTracker.services
             });
         }
 
+        // Private method: Map data from MySqlDataReader to ActivityHistoriesDetails object
         private static ActivityHistoriesDetails MapActivityHistoryDetails(MySqlDataReader reader)
         {
             return new ActivityHistoriesDetails(
@@ -117,6 +121,7 @@ namespace FitnessTracker.services
             );
         }
 
+        // Retrieve total calories burned for a specific date range
         private static double GetTotalCaloriesBurnedForDateRange(int userId, DateTime startDate, DateTime endDate)
         {
             double totalCaloriesBurned = 0;
@@ -125,15 +130,10 @@ namespace FitnessTracker.services
             string query = $"SELECT SUM(burned_calories) AS totalCalories FROM fitness_tracker.activity_histories " +
                            $"WHERE user_id = @userId AND created_at >= @startDate AND created_at <= @endDate";
 
-
             MySqlCommand command = new MySqlCommand(query, db.CONN);
             command.Parameters.AddWithValue("@userId", userId);
             command.Parameters.AddWithValue("@startDate", startDate.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("@endDate", endDate.ToString("yyyy-MM-dd HH:mm:ss"));
-
-            Console.WriteLine(startDate.ToString("yyyy-MM-dd HH:mm:ss"));
-            Console.WriteLine("end:");
-            Console.WriteLine(endDate.ToString("yyyy-MM-dd HH:mm:ss"));
 
             try
             {
@@ -155,26 +155,21 @@ namespace FitnessTracker.services
                 db.CloseConnection();
             }
 
-
-            Console.WriteLine(query);
-            Console.WriteLine($"totalCaloriesBurned: {totalCaloriesBurned}");
-
             return totalCaloriesBurned;
         }
 
-
+        // Retrieve total calories burned today for a user
         public static double GetTotalCaloriesBurnedToday(int userId)
         {
             return ErrorHandling.HandleError(() =>
             {
                 DateTime today = DateTime.Today;
                 DateTime tomorrow = today.AddDays(1);
-                Console.WriteLine($"{userId}, {today}, {tomorrow}");
                 return GetTotalCaloriesBurnedForDateRange(userId, today, tomorrow);
             });
         }
 
-
+        // Retrieve total calories burned within a specific date range for a user
         public static double GetTotalCaloriesBurnedByDateRange(int userId, DateTime startDate, DateTime endDate)
         {
             return ErrorHandling.HandleError(() =>
@@ -183,7 +178,7 @@ namespace FitnessTracker.services
             });
         }
 
-
+        // Private method: Map data from MySqlDataReader to Dictionary<string, object>
         private static Dictionary<string, object> MapReaderToDictionary(MySqlDataReader reader)
         {
             Dictionary<string, object> activityHistory = new Dictionary<string, object>();

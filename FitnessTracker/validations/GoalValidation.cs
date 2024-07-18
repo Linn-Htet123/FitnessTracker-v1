@@ -3,8 +3,16 @@ using System.Collections.Generic;
 
 namespace FitnessTracker.validations
 {
+    /// <summary>
+    /// Validation class for validating user goals.
+    /// </summary>
     internal class GoalValidation
     {
+        /// <summary>
+        /// Validates a user goal input.
+        /// </summary>
+        /// <param name="goal">The goal input to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
         public static ValidationResult ValidateGoal(string goal)
         {
             var errors = new Dictionary<string, string>();

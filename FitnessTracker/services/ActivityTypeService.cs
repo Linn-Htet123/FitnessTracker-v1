@@ -9,19 +9,24 @@ namespace FitnessTracker.services
     {
         private static readonly string ActivityTypesTable = Tables.ActivityTypes.ToTableName();
 
+        // Retrieve an ActivityType object by activity name
         public static ActivityType GetActivityTypeByName(ActivityTypesEnum activityName)
         {
+            // Convert ActivityTypesEnum to string activity name
             string activityNameString = activityName.ToActivityName();
 
+            // Define conditions to query by activity_name
             var conditions = new (string columnName, object columnValue)[]
             {
                 ("activity_name", activityNameString)
             };
 
+            // Execute query and read the result
             using (MySqlDataReader reader = QueryBuilder.Read(ActivityTypesTable, conditions: conditions))
             {
                 if (reader.Read())
                 {
+                    // Map reader data to ActivityType object
                     return new ActivityType
                     (
                         reader.GetInt32("id"),
@@ -35,7 +40,7 @@ namespace FitnessTracker.services
                     );
                 }
 
-                return null;
+                return null; // Return null if no activity type found
             }
         }
     }

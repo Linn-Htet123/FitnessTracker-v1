@@ -21,23 +21,23 @@ namespace FitnessTracker.helpers
 
         public void Start()
         {
-            timer.Start();
+            timer.Start(); // Starts the timer
         }
 
         public void Stop()
         {
-            timer.Stop();
+            timer.Stop(); // Stops the timer
         }
 
         private void OnTick(object sender, EventArgs e)
         {
             remainingTime--;
-            Tick?.Invoke(remainingTime);
+            Tick?.Invoke(remainingTime); // Invokes the Tick event with the remaining time
 
             if (remainingTime <= 0)
             {
-                timer.Stop();
-                Completed?.Invoke();
+                timer.Stop(); // Stops the timer when the countdown completes
+                Completed?.Invoke(); // Invokes the Completed event
             }
         }
     }

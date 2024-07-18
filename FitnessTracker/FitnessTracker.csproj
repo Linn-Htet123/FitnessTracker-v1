@@ -139,7 +139,6 @@
     <Compile Include="utils\CalculateActivity.cs" />
     <Compile Include="utils\CalculatePercentage.cs" />
     <Compile Include="utils\Date.cs" />
-    <Compile Include="utils\LabelGenerator.cs" />
     <Compile Include="utils\LinkForm.cs" />
     <Compile Include="utils\LabelUtils.cs" />
     <Compile Include="utils\ModalPopup.cs" />
@@ -209,6 +208,12 @@
     <Compile Include="views\SwimmingActivity.Designer.cs">
       <DependentUpon>SwimmingActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\UserProfile.Designer.cs">
+      <DependentUpon>UserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\WalkingActivity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\SwimmingActivity.resx">
       <DependentUpon>SwimmingActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UserProfile.resx">
+      <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\WalkingActivity.resx">
       <DependentUpon>WalkingActivity.cs</DependentUpon>

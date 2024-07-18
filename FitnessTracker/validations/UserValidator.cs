@@ -3,8 +3,17 @@ using System.Collections.Generic;
 
 namespace FitnessTracker.validations
 {
+    /// <summary>
+    /// Validation class for user-related operations.
+    /// </summary>
     public static class UserValidator
     {
+        /// <summary>
+        /// Validates the login credentials.
+        /// </summary>
+        /// <param name="username">The username to validate.</param>
+        /// <param name="password">The password to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
         public static ValidationResult ValidateLogin(string username, string password)
         {
             var errors = new Dictionary<string, string>();
@@ -24,6 +33,15 @@ namespace FitnessTracker.validations
             return new ValidationResult(errors);
         }
 
+        /// <summary>
+        /// Validates the signup form inputs.
+        /// </summary>
+        /// <param name="username">The username to validate.</param>
+        /// <param name="password">The password to validate.</param>
+        /// <param name="confirmPassword">The confirmation password to validate.</param>
+        /// <param name="weight">The weight input to validate.</param>
+        /// <param name="height">The height input to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
         public static ValidationResult ValidateSignup(string username, string password, string confirmPassword, string weight, string height)
         {
             var errors = new Dictionary<string, string>();
@@ -39,11 +57,37 @@ namespace FitnessTracker.validations
             {
                 errors["password"] = passwordValidation.Message;
             }
+
             var confirmPasswordValidation = ValidateConfirmPassword(password, confirmPassword);
             if (!confirmPasswordValidation.IsValid)
             {
                 errors["confirmPassword"] = confirmPasswordValidation.Message;
             }
+
+            var weightValidation = ValidateWeight(weight);
+            if (!weightValidation.IsValid)
+            {
+                errors["weight"] = weightValidation.Message;
+            }
+
+            var heightValidation = ValidateHeight(height);
+            if (!heightValidation.IsValid)
+            {
+                errors["height"] = heightValidation.Message;
+            }
+
+            return new ValidationResult(errors);
+        }
+
+        /// <summary>
+        /// Validates the profile update inputs.
+        /// </summary>
+        /// <param name="weight">The weight input to validate.</param>
+        /// <param name="height">The height input to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
+        public static ValidationResult ValidateProfileUpdate(string weight, string height)
+        {
+            var errors = new Dictionary<string, string>();
 
             var weightValidation = ValidateWeight(weight);
             if (!weightValidation.IsValid)

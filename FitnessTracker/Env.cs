@@ -12,6 +12,7 @@ namespace FitnessTracker
         // Constructor to initialize environment variables
         public Env()
         {
+            // getting from App.config file
             DatabaseServer = ConfigurationManager.AppSettings["DatabaseServer"];
             DatabaseName = ConfigurationManager.AppSettings["DatabaseName"];
             Username = ConfigurationManager.AppSettings["Username"];

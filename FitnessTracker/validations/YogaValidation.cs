@@ -3,8 +3,18 @@ using System.Collections.Generic;
 
 namespace FitnessTracker.validations
 {
+    /// <summary>
+    /// Validation class for yoga activity inputs.
+    /// </summary>
     internal class YogaValidation
     {
+        /// <summary>
+        /// Validates the inputs for yoga activity.
+        /// </summary>
+        /// <param name="duration">The duration input to validate.</param>
+        /// <param name="averageHeartRate">The average heart rate input to validate.</param>
+        /// <param name="intensityFactor">The intensity factor input to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
         public static ValidationResult ValidateYoga(string duration, string averageHeartRate, string intensityFactor)
         {
             var errors = new Dictionary<string, string>();

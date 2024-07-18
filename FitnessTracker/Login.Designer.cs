@@ -182,7 +182,7 @@
             this.Txt_password.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Txt_password.Name = "Txt_password";
             this.Txt_password.Size = new System.Drawing.Size(243, 28);
-            this.Txt_password.TabIndex = 9;
+            this.Txt_password.TabIndex = 1;
             this.Txt_password.UseSystemPasswordChar = true;
             // 
             // Lbl_error_password

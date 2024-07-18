@@ -3,8 +3,18 @@ using System.Collections.Generic;
 
 namespace FitnessTracker.validations
 {
+    /// <summary>
+    /// Validation class for validating swimming activity inputs.
+    /// </summary>
     internal class SwimmingValidation
     {
+        /// <summary>
+        /// Validates the swimming activity inputs.
+        /// </summary>
+        /// <param name="laps">The laps input to validate.</param>
+        /// <param name="timeTaken">The time taken input to validate.</param>
+        /// <param name="averageHeartRate">The average heart rate input to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
         public static ValidationResult ValidateSwimming(string laps, string timeTaken, string averageHeartRate)
         {
             var errors = new Dictionary<string, string>();

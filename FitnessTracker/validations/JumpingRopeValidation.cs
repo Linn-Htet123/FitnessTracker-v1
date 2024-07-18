@@ -3,8 +3,18 @@ using System.Collections.Generic;
 
 namespace FitnessTracker.validations
 {
+    /// <summary>
+    /// Validation class for validating jumping rope activity inputs.
+    /// </summary>
     internal class JumpingRopeValidation
     {
+        /// <summary>
+        /// Validates the jumping rope activity inputs.
+        /// </summary>
+        /// <param name="jumps">The number of jumps input to validate.</param>
+        /// <param name="duration">The duration of activity input to validate.</param>
+        /// <param name="intensityFactor">The intensity factor input to validate.</param>
+        /// <returns>A ValidationResult object indicating success or containing error messages.</returns>
         public static ValidationResult ValidateJumpingRope(string jumps, string duration, string intensityFactor)
         {
             var errors = new Dictionary<string, string>();
@@ -42,7 +52,6 @@ namespace FitnessTracker.validations
             {
                 result = Validator.IsWithinMinValue(jumpsValue, 1, ValidationMessages.JumpingRopeJumpsMustBeGreaterThanZero);
                 if (!result.IsValid) return result;
-
             }
             else
             {

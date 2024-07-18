@@ -43,7 +43,7 @@ namespace FitnessTracker.views
         private void UpdateTotalCaloriesLabel(double totalCalories, string lbl)
         {
             // Set the main label text
-            Lbl_total_calories.Text = $"{totalCalories} kcal";
+            Lbl_total_calories.Text = $"{totalCalories} cal";
             Lbl_day_msg.Text = lbl;
         }
 

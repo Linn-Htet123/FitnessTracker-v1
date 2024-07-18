@@ -12,15 +12,15 @@ namespace FitnessTracker.helpers.validations
         {
             IsValid = isValid;
             Message = message;
-            Errors = new Dictionary<string, string>();
+            Errors = new Dictionary<string, string>(); // Initializes an empty dictionary for errors
         }
 
         public ValidationResult(Dictionary<string, string> errors)
         {
-            IsValid = errors.Count == 0;
-            Errors = errors;
+            IsValid = errors.Count == 0; // Sets IsValid to true if there are no errors
+            Errors = errors; // Assigns the errors dictionary
         }
 
-        public static ValidationResult Success => new ValidationResult(true);
+        public static ValidationResult Success => new ValidationResult(true); // Provides a static property for a successful validation result
     }
 }
